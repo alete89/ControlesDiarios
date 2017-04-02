@@ -1,0 +1,15 @@
+﻿Controles Diarios (Beta 0.2.5) (agosto 2016) Changelog:
+ - Agregado este mensaje de changelog cuando se abra por primera vez.
+ - Agregado un checkbox que permite elegir fecha para cargar registros previos.
+ - Agregado un boton que limpia el formulario.
+ - Si el formulario no está completo al intentar registrar, una alerta permitirá registrar de todos modos o corregir la omisión. 
+ - Reemplazado el campo de texto nivel de agua por 5 botones para elección múltiple(< mín, min, ópt, máx, > máx).
+ - Ahora los registros se guardan en formato JSON en texto plano. 
+ - Se volvió a activar la búsqueda por fecha en los reportes. 
+ - Ahora la grilla que muestra los reportes, cambia de tamaño automáticamente con la ventana.
+ - Se puede cambiar la línea base desde el programa.También se guarda en JSON en un archivo diferente. ");
+
+ Controles Diarios (Beta 0.2.7) (enero 2017) Changelog:
+ - Ahora todos los registros de lecturas se guardan en formato decimal (en lugar de doble precisión).
+ - Corregida la configuración regional para que los valores decimales puedan introducirse con la tecla "." del teclado numérico.
+ - Nueva ventana de reportes en estado Alfa. Permitirá reportes en PDF.

@@ -1,0 +1,20 @@
+C:\Users\alete\documents\visual studio 2013\Projects\Controles 0.9\Controles 0.9\bin\Debug\Controles 0.9.exe.config
+C:\Users\alete\documents\visual studio 2013\Projects\Controles 0.9\Controles 0.9\bin\Debug\Controles 0.9.exe
+C:\Users\alete\documents\visual studio 2013\Projects\Controles 0.9\Controles 0.9\bin\Debug\Controles 0.9.pdb
+C:\Users\alete\documents\visual studio 2013\Projects\Controles 0.9\Controles 0.9\obj\Debug\Controles 0.9.csprojResolveAssemblyReference.cache
+C:\Users\alete\documents\visual studio 2013\Projects\Controles 0.9\Controles 0.9\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\alete\documents\visual studio 2013\Projects\Controles 0.9\Controles 0.9\obj\Debug\Controles_0._9.Properties.Resources.resources
+C:\Users\alete\documents\visual studio 2013\Projects\Controles 0.9\Controles 0.9\obj\Debug\WindowsFormsApplication1.ReportView.resources
+C:\Users\alete\documents\visual studio 2013\Projects\Controles 0.9\Controles 0.9\obj\Debug\Controles 0.9.csproj.GenerateResource.Cache
+C:\Users\alete\documents\visual studio 2013\Projects\Controles 0.9\Controles 0.9\obj\Debug\Controles 0.9.exe
+C:\Users\alete\documents\visual studio 2013\Projects\Controles 0.9\Controles 0.9\obj\Debug\Controles 0.9.pdb
+E:\@LeTe\Projects\Controles 0.9\Controles 0.9\bin\Debug\Controles 0.9.exe.config
+E:\@LeTe\Projects\Controles 0.9\Controles 0.9\obj\Debug\Controles 0.9.exe
+E:\@LeTe\Projects\Controles 0.9\Controles 0.9\obj\Debug\Controles 0.9.pdb
+E:\@LeTe\Projects\Controles 0.9\Controles 0.9\bin\Debug\Controles 0.9.exe
+E:\@LeTe\Projects\Controles 0.9\Controles 0.9\bin\Debug\Controles 0.9.pdb
+E:\@LeTe\Projects\Controles 0.9\Controles 0.9\obj\Debug\Controles 0.9.csprojResolveAssemblyReference.cache
+E:\@LeTe\Projects\Controles 0.9\Controles 0.9\obj\Debug\WindowsFormsApplication1.Form1.resources
+E:\@LeTe\Projects\Controles 0.9\Controles 0.9\obj\Debug\Controles_0._9.Properties.Resources.resources
+E:\@LeTe\Projects\Controles 0.9\Controles 0.9\obj\Debug\WindowsFormsApplication1.ReportView.resources
+E:\@LeTe\Projects\Controles 0.9\Controles 0.9\obj\Debug\Controles 0.9.csproj.GenerateResource.Cache
