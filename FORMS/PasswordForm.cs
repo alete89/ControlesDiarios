@@ -31,6 +31,7 @@ namespace Controles2016
                 else
                 {
                     MessageBox.Show("Password incorrecto");
+                    tbPass.SelectAll();
                 }
             }
         }
