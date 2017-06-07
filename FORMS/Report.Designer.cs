@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportView));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btnBuscarPorFecha = new System.Windows.Forms.Button();
             this.btnMostrarTodos = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -151,6 +149,7 @@
             this.btnMostrarReport.TabIndex = 38;
             this.btnMostrarReport.Text = "Mostrar Para Reportar";
             this.btnMostrarReport.UseVisualStyleBackColor = true;
+            this.btnMostrarReport.Visible = false;
             this.btnMostrarReport.Click += new System.EventHandler(this.btnPDF_Click);
             // 
             // btnXLS
@@ -180,24 +179,18 @@
             // dgvReportes
             // 
             this.dgvReportes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReportes.Location = new System.Drawing.Point(842, 358);
+            this.dgvReportes.Location = new System.Drawing.Point(665, 358);
             this.dgvReportes.Name = "dgvReportes";
-            this.dgvReportes.Size = new System.Drawing.Size(473, 233);
+            this.dgvReportes.Size = new System.Drawing.Size(650, 233);
             this.dgvReportes.TabIndex = 40;
             // 
             // chart1
             // 
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(25, 276);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(728, 315);
+            this.chart1.Size = new System.Drawing.Size(620, 315);
             this.chart1.TabIndex = 41;
             this.chart1.Text = "chart1";
             // 
@@ -209,15 +202,17 @@
             this.btnGraficar.TabIndex = 42;
             this.btnGraficar.Text = "graficar";
             this.btnGraficar.UseVisualStyleBackColor = true;
+            this.btnGraficar.Visible = false;
             this.btnGraficar.Click += new System.EventHandler(this.btnGraficar_Click);
             // 
             // btnPDF
             // 
-            this.btnPDF.Location = new System.Drawing.Point(1006, 329);
+            this.btnPDF.Enabled = false;
+            this.btnPDF.Location = new System.Drawing.Point(105, 192);
             this.btnPDF.Name = "btnPDF";
-            this.btnPDF.Size = new System.Drawing.Size(75, 23);
+            this.btnPDF.Size = new System.Drawing.Size(103, 34);
             this.btnPDF.TabIndex = 43;
-            this.btnPDF.Text = "PDF";
+            this.btnPDF.Text = "Imprimir";
             this.btnPDF.UseVisualStyleBackColor = true;
             this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click_1);
             // 

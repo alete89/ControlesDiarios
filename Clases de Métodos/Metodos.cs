@@ -43,8 +43,8 @@ namespace Controles2016
         {
             int x_value = (anchohoja-tabla.Width)/2;
             int y_value = posicionlinea;
-            Font Header = new Font("Arial", 13, FontStyle.Bold);
-            Font celda = new Font("Arial", 12, FontStyle.Regular);
+            Font Header = new Font("Arial", 10, FontStyle.Bold);
+            Font celda = new Font("Arial", 9, FontStyle.Regular);
             StringFormat centro = new StringFormat(); centro.Alignment = StringAlignment.Center;
             StringFormat izquierda = new StringFormat(); izquierda.Alignment = StringAlignment.Near;
             SolidBrush color = new SolidBrush(Color.Black);
@@ -53,7 +53,7 @@ namespace Controles2016
             foreach (DataGridViewColumn dc in tabla.Columns)
             {
                 e.Graphics.DrawString(dc.HeaderText, Header, color, x_value, y_value,centro);
-                x_value += dc.Width + 5;
+                x_value += dc.Width + 7;
             }
             y_value += 40;
             for (int i = 0; i < tabla.RowCount; i++)
@@ -62,7 +62,7 @@ namespace Controles2016
                 DataGridViewRow dr = tabla.Rows[i];
                 x_value = (anchohoja - tabla.Width) / 2;
                 int j = 0;
-                e.Graphics.DrawLine(Pens.Black, new Point(x_value-40, y_value), new Point(x_value+tabla.Width-20, y_value));
+                e.Graphics.DrawLine(Pens.Black, new Point(x_value-40, y_value), new Point(x_value+tabla.Width+200, y_value));
                 foreach (DataGridViewColumn dc in tabla.Columns)
                 {
                     string text = tabla[j,i].Value.ToString();

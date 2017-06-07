@@ -14,7 +14,7 @@ namespace Controles2016
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            var pass = "5C85BB36F3869809FB738A3BA6F990AEDBFECA3DF2DC1A997FA49C50D0EED8E6";
+            /*var pass = "5C85BB36F3869809FB738A3BA6F990AEDBFECA3DF2DC1A997FA49C50D0EED8E6";
             if (tbPass.Text == "Password" | tbPass.Text == "")
             {
                 MessageBox.Show("Debe ingresar un password");
@@ -22,7 +22,8 @@ namespace Controles2016
             else
             {
                 var hash = hashea(tbPass.Text);
-                if (hash == pass)
+            //    if (hash == pass)
+            if (true)
                 {
                     ReportView form3 = new ReportView();
                     form3.Show();
@@ -33,7 +34,10 @@ namespace Controles2016
                     MessageBox.Show("Password incorrecto");
                     tbPass.SelectAll();
                 }
-            }
+            }*/
+            ReportView form3 = new ReportView();
+            form3.Show();
+            Dispose();
         }
         internal static string hashea(string text)
         {

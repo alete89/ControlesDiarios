@@ -30,8 +30,8 @@ namespace PruebaUI.Metodos
             Area.AxisX.IsLabelAutoFit = false;
             Area.AxisX.MajorGrid.LineColor = System.Drawing.Color.FromArgb(240, 240, 240);
             //Area.AxisY.Title = "unidades relativas";
-            Area.AxisY.Minimum = 0;
-            Area.AxisY.Maximum = 110;
+            //Area.AxisY.Minimum = 0;
+            //Area.AxisY.Maximum = 110;
             Area.AxisY.LineColor = System.Drawing.Color.Black;
             Area.AxisY.MajorGrid.Interval = 20;
             Area.AxisY.MajorTickMark.Interval = 20;

@@ -14,7 +14,7 @@ namespace Controles2016
         public string fechamax { get; set; }
         public decimal min { get; set; }
         public string fechamin { get; set; }
-        public decimal vlb { get; set; }
+        public decimal LB { get; set; }
 
     }
 }

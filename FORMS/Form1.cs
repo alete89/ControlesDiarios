@@ -753,9 +753,11 @@ namespace Controles2016
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            PasswordForm pf = new PasswordForm();
+            /*PasswordForm pf = new PasswordForm();
             pf.ShowDialog();
-            this.SendToBack();
+            this.SendToBack();*/
+            ReportView form3 = new ReportView();
+            form3.Show();
         }
 
         private void chkOtraFecha_CheckedChanged(object sender, EventArgs e)

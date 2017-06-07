@@ -85,3 +85,26 @@ E:\Visual Studio Projects\Controles2016\bin\Debug\itextsharp.xml
 E:\Visual Studio Projects\Controles2016\bin\Debug\MathNet.Numerics.xml
 E:\Visual Studio Projects\Controles2016\bin\Debug\Newtonsoft.Json.xml
 E:\Visual Studio Projects\Controles2016\obj\x86\Debug\Controles2016.About.resources
+C:\Users\Pablo\Source\Repos\ControlesDiarios\bin\Debug\Controles 2016 pre release.exe.config
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Debug\Controles 2016 pre release.exe
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Debug\Controles 2016 pre release.pdb
+C:\Users\Pablo\Source\Repos\ControlesDiarios\bin\Debug\Controles 2016 pre release.exe
+C:\Users\Pablo\Source\Repos\ControlesDiarios\bin\Debug\Controles 2016 pre release.pdb
+C:\Users\Pablo\Source\Repos\ControlesDiarios\bin\Debug\ClosedXML.dll
+C:\Users\Pablo\Source\Repos\ControlesDiarios\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Pablo\Source\Repos\ControlesDiarios\bin\Debug\itextsharp.dll
+C:\Users\Pablo\Source\Repos\ControlesDiarios\bin\Debug\MathNet.Numerics.dll
+C:\Users\Pablo\Source\Repos\ControlesDiarios\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Pablo\Source\Repos\ControlesDiarios\bin\Debug\ClosedXML.pdb
+C:\Users\Pablo\Source\Repos\ControlesDiarios\bin\Debug\ClosedXML.xml
+C:\Users\Pablo\Source\Repos\ControlesDiarios\bin\Debug\itextsharp.xml
+C:\Users\Pablo\Source\Repos\ControlesDiarios\bin\Debug\MathNet.Numerics.xml
+C:\Users\Pablo\Source\Repos\ControlesDiarios\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Debug\Controles2016.csprojResolveAssemblyReference.cache
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Debug\Controles2016.About.resources
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Debug\Controles2016.Form1.resources
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Debug\Controles2016.LineaBaseEdit.resources
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Debug\Controles2016.PasswordForm.resources
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Debug\Controles2016.Properties.Resources.resources
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Debug\Controles2016.ReportView.resources
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Debug\Controles2016.csproj.GenerateResource.Cache
