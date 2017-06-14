@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.IO;
@@ -64,7 +65,7 @@ namespace Controles2016
                 porfecha.Clear();
                 foreach (Registro reg in lista)
                 {
-                    DateTime freg = DateTime.ParseExact(reg._fecha, "d", null);
+                    DateTime freg = DateTime.ParseExact(reg._fecha, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                     if (freg >= dateTimePicker1.Value.Date && freg <= dateTimePicker2.Value.Date)
                     {
                         porfecha.Add(reg);
