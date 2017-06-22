@@ -39,6 +39,13 @@ namespace Controles2016
             Rectangle rect = new Rectangle((anchohoja - grafico.Width) / 2, posicionlinea, grafico.Width, grafico.Height);
             grafico.Printing.PrintPaint(e.Graphics, rect);
         }
+
+        public static void imprimirGraficoChico(PrintPageEventArgs e, Chart grafico, int x, int y, int ancho, int alto)
+        {
+            Rectangle rect = new Rectangle(x, y, ancho, alto);
+            grafico.Printing.PrintPaint(e.Graphics, rect);
+        }
+
         public static void imprimirtabla(PrintPageEventArgs e, DataGridView tabla, int anchohoja, int posicionlinea)
         {
             int x_value = (anchohoja-tabla.Width)/2;

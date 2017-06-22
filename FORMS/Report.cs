@@ -32,6 +32,9 @@ namespace Controles2016
         decimal[] lineabasecentral = new decimal[lista.Count];
         decimal[] toleranciamas = new decimal[lista.Count];
         decimal[] toleranciamenos = new decimal[lista.Count];
+        decimal[][] Variables;
+        string[] etiquetas = { "Dosis Central", "Simetría Y", "Simetria X", "Planicidad Y", "Planicidad X" };
+        decimal[] lbarray = { lb.central, lb.simetriaArribaAbajo, lb.simetriaIzquierdaDerecha, lb.planicidadArribaAbajo, lb.planicidadIzquierdaDerecha };
 
 
         public ReportView()
@@ -77,10 +80,11 @@ namespace Controles2016
                 btnPDF_Click(sender, e);
                 btnGraficar_Click(sender, e);
                 btnPDF.Enabled = true;
+                btnGraficar.Enabled = true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al mostrar /n" + ex.ToString());
+                MessageBox.Show("Error al mostrar \n" + ex.ToString());
             }
 
         }
@@ -98,11 +102,12 @@ namespace Controles2016
                 btnPDF_Click(sender, e);
                 btnGraficar_Click(sender, e);
                 btnPDF.Enabled = true;
+                btnGraficar.Enabled = true;
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al mostrar /n" + ex.ToString());
+                MessageBox.Show("Error al mostrar \n" + ex.ToString());
             }
 
         }
@@ -141,15 +146,15 @@ namespace Controles2016
 
             List<Registro_Report> listareporte = new List<Registro_Report>();
 
-            listareporte.Add(new Registro_Report() { variable = "Dosis Central", promedio = decimal.Round(DosisCentrales.Average(), 2), max = DosisCentrales.Max(), fechamax = fechas[Array.IndexOf(DosisCentrales, DosisCentrales.Max())], min = DosisCentrales.Min(), fechamin = fechas[Array.IndexOf(DosisCentrales, DosisCentrales.Min())], LB = lb.central });
-            listareporte.Add(new Registro_Report() { variable = "Simetría Y", promedio = decimal.Round(SimetriasArribaAbajo.Average(), 2), max = SimetriasArribaAbajo.Max(), fechamax = fechas[Array.IndexOf(SimetriasArribaAbajo, SimetriasArribaAbajo.Max())], min = SimetriasArribaAbajo.Min(), fechamin = fechas[Array.IndexOf(SimetriasArribaAbajo, SimetriasArribaAbajo.Min())], LB = lb.simetriaArribaAbajo });
-            listareporte.Add(new Registro_Report() { variable = "Simetría X", promedio = decimal.Round(SimetriasIzquierdaDerecha.Average(), 2), max = SimetriasIzquierdaDerecha.Max(), fechamax = fechas[Array.IndexOf(SimetriasIzquierdaDerecha, SimetriasIzquierdaDerecha.Max())], min = SimetriasIzquierdaDerecha.Min(), fechamin = fechas[Array.IndexOf(SimetriasIzquierdaDerecha, SimetriasIzquierdaDerecha.Min())], LB = lb.simetriaIzquierdaDerecha });
-            listareporte.Add(new Registro_Report() { variable = "Planicidad Y", promedio = decimal.Round(PlanicidadesArribaAbajo.Average(), 2), max = PlanicidadesArribaAbajo.Max(), fechamax = fechas[Array.IndexOf(PlanicidadesArribaAbajo, PlanicidadesArribaAbajo.Max())], min = PlanicidadesArribaAbajo.Min(), fechamin = fechas[Array.IndexOf(PlanicidadesArribaAbajo, PlanicidadesArribaAbajo.Min())], LB = lb.planicidadArribaAbajo });
-            listareporte.Add(new Registro_Report() { variable = "Planicidad X", promedio = decimal.Round(PlanicidadesIzquierdaDerecha.Average(), 2), max = PlanicidadesIzquierdaDerecha.Max(), fechamax = fechas[Array.IndexOf(PlanicidadesIzquierdaDerecha, PlanicidadesIzquierdaDerecha.Max())], min = PlanicidadesIzquierdaDerecha.Min(), fechamin = fechas[Array.IndexOf(PlanicidadesIzquierdaDerecha, PlanicidadesIzquierdaDerecha.Min())], LB = lb.planicidadIzquierdaDerecha });
+            listareporte.Add(new Registro_Report() { variable = "Dosis Central", promedio = decimal.Round(DosisCentrales.Average(), 2), max = decimal.Round(DosisCentrales.Max(),2), fechamax = fechas[Array.IndexOf(DosisCentrales, DosisCentrales.Max())], min = decimal.Round(DosisCentrales.Min(),2), fechamin = fechas[Array.IndexOf(DosisCentrales, DosisCentrales.Min())], LB = lb.central });
+            listareporte.Add(new Registro_Report() { variable = "Simetría Y", promedio = decimal.Round(SimetriasArribaAbajo.Average(), 2), max = decimal.Round(SimetriasArribaAbajo.Max(),2), fechamax = fechas[Array.IndexOf(SimetriasArribaAbajo, SimetriasArribaAbajo.Max())], min = decimal.Round(SimetriasArribaAbajo.Min(),2), fechamin = fechas[Array.IndexOf(SimetriasArribaAbajo, SimetriasArribaAbajo.Min())], LB = lb.simetriaArribaAbajo });
+            listareporte.Add(new Registro_Report() { variable = "Simetría X", promedio = decimal.Round(SimetriasIzquierdaDerecha.Average(), 2), max = decimal.Round(SimetriasIzquierdaDerecha.Max(),2), fechamax = fechas[Array.IndexOf(SimetriasIzquierdaDerecha, SimetriasIzquierdaDerecha.Max())], min = decimal.Round(SimetriasIzquierdaDerecha.Min(),2), fechamin = fechas[Array.IndexOf(SimetriasIzquierdaDerecha, SimetriasIzquierdaDerecha.Min())], LB = lb.simetriaIzquierdaDerecha });
+            listareporte.Add(new Registro_Report() { variable = "Planicidad Y", promedio = decimal.Round(PlanicidadesArribaAbajo.Average(), 2), max = decimal.Round(PlanicidadesArribaAbajo.Max(),2), fechamax = fechas[Array.IndexOf(PlanicidadesArribaAbajo, PlanicidadesArribaAbajo.Max())], min = decimal.Round(PlanicidadesArribaAbajo.Min(), 2), fechamin = fechas[Array.IndexOf(PlanicidadesArribaAbajo, PlanicidadesArribaAbajo.Min())], LB = lb.planicidadArribaAbajo });
+            listareporte.Add(new Registro_Report() { variable = "Planicidad X", promedio = decimal.Round(PlanicidadesIzquierdaDerecha.Average(), 2), max = decimal.Round(PlanicidadesIzquierdaDerecha.Max(),2), fechamax = fechas[Array.IndexOf(PlanicidadesIzquierdaDerecha, PlanicidadesIzquierdaDerecha.Max())], min = decimal.Round(PlanicidadesIzquierdaDerecha.Min(),2), fechamin = fechas[Array.IndexOf(PlanicidadesIzquierdaDerecha, PlanicidadesIzquierdaDerecha.Min())], LB = lb.planicidadIzquierdaDerecha });
 
             dgvReportes.DataSource = null;
             dgvReportes.DataSource = listareporte;
-
+            Variables = new[] { DosisCentrales, SimetriasArribaAbajo, SimetriasIzquierdaDerecha, PlanicidadesArribaAbajo, PlanicidadesIzquierdaDerecha };
         }
 
         private void btnXLS_Click(object sender, EventArgs e)
@@ -164,55 +169,53 @@ namespace Controles2016
             printDocument1.OriginAtMargins = true;
             printDocument1.DefaultPageSettings.Landscape = false;
             printDocument1.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A4;
-            printDocument1.DefaultPageSettings.Margins = new System.Drawing.Printing.Margins(100,100,100,100);
+            printDocument1.DefaultPageSettings.Margins = new System.Drawing.Printing.Margins(50,50,50,50);
 
             int anchoTotal = Convert.ToInt32(printDocument1.DefaultPageSettings.PrintableArea.Width) - printDocument1.DefaultPageSettings.Margins.Left - printDocument1.DefaultPageSettings.Margins.Right;
             int altoTotal = Convert.ToInt32(printDocument1.DefaultPageSettings.PrintableArea.Height) - printDocument1.DefaultPageSettings.Margins.Top - printDocument1.DefaultPageSettings.Margins.Bottom;
 
             Metodos.imprimirTitulo(e, "Reporte controles diarios", anchoTotal, 0);
             Metodos.imprimirTexto(e, "Fecha inicial: " + fechas[0].ToString() + "\n" + "Fecha final: " + fechas[fechas.Count() - 1].ToString(), anchoTotal, 70, 4);
-            Metodos.imprimirGrafico(e, chart1, anchoTotal, 200);
-            Metodos.imprimirtabla(e, dgvReportes, anchoTotal, 700);
+            Metodos.imprimirtabla(e, dgvReportes, anchoTotal, 160);
+
+            int x = 170; int y = 400;
+
+            MGraficos.graficarregistros(etiquetas[0], fechas, Variables[0], lbarray[0], chart1, 0.03m * lbarray[0]);
+            chart1.Series[0].MarkerSize = 0;
+            Metodos.imprimirGraficoChico(e, chart1, x, y, chart1.Width, Convert.ToInt32(chart1.Height/1.3));
+            y += Convert.ToInt32(chart1.Height / 1.2);
+            x = 20;
+            for (int i=1;i<5;i++)
+            {
+                MGraficos.graficarregistros(etiquetas[i], fechas, Variables[i], lbarray[i], chart1, 3);
+                chart1.Series[0].MarkerSize = 0;
+                foreach(var serie in chart1.Series) { serie.IsVisibleInLegend = false; }
+                Metodos.imprimirGraficoChico(e, chart1, x, y, Convert.ToInt32(chart1.Width/1.5), Convert.ToInt32(chart1.Height / 1.6));
+                if (i%2!=0)
+                {
+                    x += 400;
+                }
+                else
+                {
+                    x = 20; y+= Convert.ToInt32(chart1.Height / 1.5);
+                }
+            }
+            btnGraficar_Click(sender, e);
         }
 
         private void btnGraficar_Click(object sender, EventArgs e)
         {
-            chart1.ChartAreas.Clear();
-            chart1.Series.Clear();
-            ChartArea area = new ChartArea();
-            Series serie1 = new Series();
-            serie1.Name = "Dosis Centrales";
-            serie1.Points.DataBindXY(fechas, DosisCentrales);
-            serie1.ChartType = SeriesChartType.Line;
-
-            Series serie2 = new Series();
-            serie2.Name = "Linea Base";
-            serie2.Points.DataBindXY(fechas, lineabasecentral);
-            serie2.ChartType = SeriesChartType.Line;
-
-            Series serie3 = new Series();
-            serie3.Name = "Tolerancia +";
-            serie3.Points.DataBindXY(fechas, toleranciamas);
-            serie3.ChartType = SeriesChartType.Line;
-
-            Series serie4 = new Series();
-            serie4.Name = "Tolerancia -";
-            serie4.Points.DataBindXY(fechas, toleranciamenos);
-            serie4.ChartType = SeriesChartType.Line;
-
-
-            chart1.ChartAreas.Add(area);
-            chart1.Series.Add(serie1);
-            chart1.Series.Add(serie2);
-            chart1.Series.Add(serie3);
-            chart1.Series.Add(serie4);
-            decimal Ymin = Math.Min(DosisCentrales.Min(), toleranciamenos.Min());
-            decimal Ymax = Math.Max(DosisCentrales.Max(), toleranciamas.Max());
-            chart1.ChartAreas[0].AxisY.Minimum = (double)(Ymin - (Ymax - Ymin) / 10);
-            chart1.ChartAreas[0].AxisY.Maximum = (double)(Ymax + (Ymax - Ymin) / 10);
-            chart1.ChartAreas[0].AxisY.MajorGrid.LineColor = System.Drawing.Color.FromArgb(240, 240, 240);
-            chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = System.Drawing.Color.FromArgb(240, 240, 240);
-
+            int aux = 0;
+            if (LB_VariableAGraficar.SelectedIndex==-1)
+            { LB_VariableAGraficar.SelectedIndex = 0; }
+            else {aux = LB_VariableAGraficar.SelectedIndex; }
+            decimal tol;
+            if (aux==0)
+            {
+                tol = 0.03m * lbarray[aux];
+            }
+            else { tol = 3; }
+            MGraficos.graficarregistros(etiquetas[aux], fechas, Variables[aux], lbarray[aux], chart1, tol);
         }
 
         private void btnPDF_Click_1(object sender, EventArgs e)

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportView));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             this.btnBuscarPorFecha = new System.Windows.Forms.Button();
             this.btnMostrarTodos = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,6 +47,7 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnGraficar = new System.Windows.Forms.Button();
             this.btnPDF = new System.Windows.Forms.Button();
+            this.LB_VariableAGraficar = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportes)).BeginInit();
@@ -143,7 +144,7 @@
             // 
             // btnMostrarReport
             // 
-            this.btnMostrarReport.Location = new System.Drawing.Point(856, 329);
+            this.btnMostrarReport.Location = new System.Drawing.Point(749, 329);
             this.btnMostrarReport.Name = "btnMostrarReport";
             this.btnMostrarReport.Size = new System.Drawing.Size(144, 23);
             this.btnMostrarReport.TabIndex = 38;
@@ -179,42 +180,56 @@
             // dgvReportes
             // 
             this.dgvReportes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReportes.Location = new System.Drawing.Point(665, 358);
+            this.dgvReportes.Location = new System.Drawing.Point(749, 358);
             this.dgvReportes.Name = "dgvReportes";
-            this.dgvReportes.Size = new System.Drawing.Size(650, 233);
+            this.dgvReportes.Size = new System.Drawing.Size(566, 233);
             this.dgvReportes.TabIndex = 40;
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Location = new System.Drawing.Point(25, 276);
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            this.chart1.Location = new System.Drawing.Point(165, 276);
             this.chart1.Name = "chart1";
-            this.chart1.Size = new System.Drawing.Size(620, 315);
+            this.chart1.Size = new System.Drawing.Size(560, 315);
             this.chart1.TabIndex = 41;
             this.chart1.Text = "chart1";
             // 
             // btnGraficar
             // 
-            this.btnGraficar.Location = new System.Drawing.Point(12, 170);
+            this.btnGraficar.Enabled = false;
+            this.btnGraficar.Location = new System.Drawing.Point(13, 426);
             this.btnGraficar.Name = "btnGraficar";
-            this.btnGraficar.Size = new System.Drawing.Size(75, 23);
+            this.btnGraficar.Size = new System.Drawing.Size(120, 23);
             this.btnGraficar.TabIndex = 42;
-            this.btnGraficar.Text = "graficar";
+            this.btnGraficar.Text = "Graficar";
             this.btnGraficar.UseVisualStyleBackColor = true;
-            this.btnGraficar.Visible = false;
             this.btnGraficar.Click += new System.EventHandler(this.btnGraficar_Click);
             // 
             // btnPDF
             // 
             this.btnPDF.Enabled = false;
-            this.btnPDF.Location = new System.Drawing.Point(105, 192);
+            this.btnPDF.Location = new System.Drawing.Point(165, 141);
             this.btnPDF.Name = "btnPDF";
             this.btnPDF.Size = new System.Drawing.Size(103, 34);
             this.btnPDF.TabIndex = 43;
             this.btnPDF.Text = "Imprimir";
             this.btnPDF.UseVisualStyleBackColor = true;
             this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click_1);
+            // 
+            // LB_VariableAGraficar
+            // 
+            this.LB_VariableAGraficar.FormattingEnabled = true;
+            this.LB_VariableAGraficar.Items.AddRange(new object[] {
+            "Dosis Central",
+            "Simetría Y",
+            "Simetría X",
+            "Planicidad Y",
+            "Planicidad X"});
+            this.LB_VariableAGraficar.Location = new System.Drawing.Point(13, 276);
+            this.LB_VariableAGraficar.Name = "LB_VariableAGraficar";
+            this.LB_VariableAGraficar.Size = new System.Drawing.Size(120, 134);
+            this.LB_VariableAGraficar.TabIndex = 44;
             // 
             // ReportView
             // 
@@ -223,6 +238,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1327, 603);
+            this.Controls.Add(this.LB_VariableAGraficar);
             this.Controls.Add(this.btnPDF);
             this.Controls.Add(this.btnGraficar);
             this.Controls.Add(this.chart1);
@@ -269,5 +285,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Button btnGraficar;
         private System.Windows.Forms.Button btnPDF;
+        private System.Windows.Forms.ListBox LB_VariableAGraficar;
     }
 }

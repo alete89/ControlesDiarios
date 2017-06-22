@@ -97,3 +97,4 @@ C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Debug\Controles2016.ReportV
 C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Debug\Controles2016.csproj.GenerateResource.Cache
 C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Debug\Controles 2016 pre release.exe
 C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Debug\Controles 2016 pre release.pdb
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Debug\Controles2016.csprojResolveAssemblyReference.cache

@@ -10,7 +10,7 @@ using MathNet.Numerics.Statistics;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Forms;
 
-namespace PruebaUI.Metodos
+namespace Controles2016
 {
     static class MGraficos
     {
@@ -56,14 +56,14 @@ namespace PruebaUI.Metodos
         }
         public static void graficarregistros(string nombre, string[] Fecha, decimal[] Variable, decimal LBValor, Chart Grafico, decimal Tol)
         {
-            if (nombre == "Dosis Central") { Tol = Tol * LBValor / 100; }
             FontFamily fuente = new FontFamily("Segoe UI");
             decimal[] dFecha = new decimal[Fecha.Count()];
             DateTime[] DTFecha = new DateTime[Fecha.Count()];
 
             for (int i = 0; i < Fecha.Count(); i++)
             {
-                DTFecha[i] = Convert.ToDateTime(Fecha[i], System.Globalization.CultureInfo.InvariantCulture);
+                DTFecha[i]= DateTime.ParseExact(Fecha[i], "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                //DTFecha[i] = Convert.ToDateTime(Fecha[i], System.Globalization.CultureInfo.InvariantCulture);
                 dFecha[i] = (decimal)DTFecha[i].ToOADate();
             }
 
@@ -74,15 +74,17 @@ namespace PruebaUI.Metodos
             if (dFecha.Min() == dFecha.Max()) { Xmin = dFecha.Min() * 0.95m; Xmax = dFecha.Min() * 1.05m; }
             else { Xmin = dFecha.Min(); Xmax = dFecha.Max(); }
             decimal Ymin = Math.Min(Variable.Min(), LBValor-Tol); decimal Ymax = Math.Max(Variable.Max(), LBValor+Tol);
+            double tick = Convert.ToDouble((Xmax - Xmin) / 4);
 
-            Area.AxisX.Minimum = (double)(Xmin - (Xmax - Xmin) / 10);
-            Area.AxisX.Maximum = (double)(Xmax + (Xmax - Xmin) / 10);
+            Area.AxisX.Minimum = (double)(Xmin - (Xmax - Xmin) / 100);
+            Area.AxisX.Maximum = (double)(Xmax + (Xmax - Xmin) / 100);
             Area.AxisX.LabelStyle.Font = new System.Drawing.Font("Segoe UI", 8, System.Drawing.FontStyle.Regular);
+            Area.AxisX.LabelStyle.Format = "dd/MM/yy";
             Area.AxisX.LineColor = System.Drawing.Color.Black;
-            Area.AxisX.MajorGrid.Interval = (double)(Math.Ceiling(5 / (Xmax - Xmin)));
-            Area.AxisX.MajorTickMark.Interval = (double)(Math.Ceiling(5 / (Xmax - Xmin)));
-            Area.AxisX.LabelStyle.Interval = (double)(Math.Ceiling(5 / (Xmax - Xmin)));
-            Area.AxisX.LabelStyle.Angle = 45;
+            Area.AxisX.MajorGrid.Interval = tick;
+            Area.AxisX.MajorTickMark.Interval = tick;
+            Area.AxisX.LabelStyle.Interval = tick;
+            //Area.AxisX.LabelStyle.Angle = 45;
             Area.AxisX.IsLabelAutoFit = false;
             Area.AxisX.MajorGrid.LineColor = System.Drawing.Color.FromArgb(240, 240, 240);
             Area.AxisY.Minimum = (double)(Ymin - (Ymax - Ymin) / 10);
@@ -94,9 +96,9 @@ namespace PruebaUI.Metodos
 
             Series Serievariable = new Series(); Grafico.Series.Add(Serievariable);
             Serievariable.Points.DataBindXY(DTFecha, Variable);
-            Serievariable.ChartType = SeriesChartType.Point;
+            Serievariable.ChartType = SeriesChartType.Line;
             Serievariable.MarkerColor = System.Drawing.Color.Blue;
-            Serievariable.MarkerSize = 8;
+            Serievariable.MarkerSize = 3;
             Serievariable.MarkerStyle = MarkerStyle.Circle;
             Serievariable.ToolTip = "#VALY \n #VALX";
             Serievariable.LegendText = nombre;
@@ -114,8 +116,8 @@ namespace PruebaUI.Metodos
             decimal[] MTolarray = Enumerable.Repeat(LBValor+Tol, Variable.Count()).ToArray();
             SerieMTol.Points.DataBindXY(DTFecha, MTolarray);
             SerieMTol.ChartType = SeriesChartType.Line;
-            SerieMTol.Color = Color.Gray;
-            SerieMTol.BorderDashStyle = ChartDashStyle.Dash;
+            //SerieMTol.Color = Color.Gray;
+            //SerieMTol.BorderDashStyle = ChartDashStyle.Dash;
             SerieMTol.LegendText = "LB+Tol";
             SerieMTol.IsVisibleInLegend = true;
 
@@ -123,8 +125,8 @@ namespace PruebaUI.Metodos
             decimal[] mTolarray = Enumerable.Repeat(LBValor-Tol, Variable.Count()).ToArray();
             SeriemTol.Points.DataBindXY(DTFecha, mTolarray);
             SeriemTol.ChartType = SeriesChartType.Line;
-            SeriemTol.Color = Color.Gray;
-            SeriemTol.BorderDashStyle = ChartDashStyle.Dot;
+            //SeriemTol.Color = Color.Gray;
+            //SeriemTol.BorderDashStyle = ChartDashStyle.Dot;
             SeriemTol.LegendText = "LB-Tol";
             SeriemTol.IsVisibleInLegend = true;
 
@@ -133,7 +135,7 @@ namespace PruebaUI.Metodos
             Grafico.Titles[0].Font = new System.Drawing.Font("Segoe UI", 15, System.Drawing.FontStyle.Regular);
             Grafico.Visible = true;
             Legend leyenda = new Legend(); Grafico.Legends.Add(leyenda);
-            leyenda.Docking = Docking.Bottom;
+            leyenda.Docking = Docking.Right;
             leyenda.Alignment = StringAlignment.Center;
 
 
