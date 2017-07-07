@@ -68,7 +68,7 @@ namespace Controles2016
                 MessageBox.Show("Bienvenido por primera vez!\nSe generó una nueva línea base precargada.");
             }
 
-                HOY.Text = DateTime.Now.ToShortDateString();
+                HOY.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
             try
             {
@@ -93,6 +93,7 @@ namespace Controles2016
                 }
                 else
                 {
+                    ((TextBox)sender).Text = ((TextBox)sender).Text.Replace(".", ",");
                     lecturaArriba = decimal.Parse(LecturaArriba.Text);
                 }
             }
@@ -127,6 +128,7 @@ namespace Controles2016
                 }
                 else
                 {
+                    ((TextBox)sender).Text = ((TextBox)sender).Text.Replace(".", ",");
                     lecturaAbajo = decimal.Parse(LecturaAbajo.Text);
                 }
             }
@@ -161,6 +163,7 @@ namespace Controles2016
                 }
                 else
                 {
+                    ((TextBox)sender).Text = ((TextBox)sender).Text.Replace(".", ",");
                     lecturaDerecha = decimal.Parse(LecturaDerecha.Text);
                 }
             }
@@ -195,6 +198,7 @@ namespace Controles2016
                 }
                 else
                 {
+                    ((TextBox)sender).Text = ((TextBox)sender).Text.Replace(".", ",");
                     lecturaIzquierda = decimal.Parse(LecturaIzquierda.Text);
                 }
             }
@@ -229,6 +233,7 @@ namespace Controles2016
             {
                 try
                 {
+                    ((TextBox)sender).Text = ((TextBox)sender).Text.Replace(".", ",");
                     lecturaCentral = decimal.Parse(LecturaCentro.Text);
                 }
                 catch (Exception)
@@ -258,6 +263,7 @@ namespace Controles2016
             {
                 try
                 {
+                    ((TextBox)sender).Text = ((TextBox)sender).Text.Replace(".", ",");
                     lecturaTemperatura = decimal.Parse(LecturaTemp.Text);
                 }
                 catch (Exception)
@@ -274,6 +280,7 @@ namespace Controles2016
             {
                 try
                 {
+                    ((TextBox)sender).Text = ((TextBox)sender).Text.Replace(".", ",");
                     lecturaPresion = decimal.Parse(LecturaPresion.Text);
                 }
                 catch (Exception)
@@ -354,203 +361,148 @@ namespace Controles2016
                 DialogResult dialog = MessageBox.Show("Algún campo quedó sin completar. ¿Desea registrar de todos modos?", "Alerta", MessageBoxButtons.YesNo);
                 if (dialog == DialogResult.Yes)
                 {
-                    #region ASIGNACION AL OBJETO REGISTRO
-                    try
-                    {
-                        string fecha;
-                        if (!dateTimePicker1.Enabled)
-                        {
-                            fecha = DateTime.Now.Date.ToShortDateString();
-                        }
-                        else
-                        {
-                            fecha = dateTimePicker1.Value.Date.ToShortDateString();
-                        }
-
-
-                        //mecánicos
-                        if (LaserOK.Checked) { laser = true; }
-                        if (LaserERROR.Checked) { laser = false; }
-                        if (DistOK.Checked) { distancia = true; }
-                        if (DistERROR.Checked) { distancia = false; }
-                        if (Campo5x5OK.Checked) { cincox = true; }
-                        if (Campo5x5ERROR.Checked) { cincox = false; }
-                        if (Campo10x10OK.Checked) { diezx = true; }
-                        if (Campo10x10ERROR.Checked) { diezx = false; }
-                        if (Campo25x25OK.Checked) { veinticincox = true; }
-                        if (Campo25x25ERROR.Checked) { veinticincox = false; }
-                        if (MLCOK.Checked) { mlc = true; }
-                        if (MLCERROR.Checked) { mlc = false; }
-                        //seguridad
-                        if (SwitchOK.Checked) { switchPuerta = true; }
-                        if (SwitchERROR.Checked) { switchPuerta = false; }
-                        if (LucesOK.Checked) { lucesPuerta = true; }
-                        if (LucesERROR.Checked) { lucesPuerta = false; }
-                        if (IndicadorRadOK.Checked) { luzConsola = true; }
-                        if (IndicadorRadERROR.Checked) { luzConsola = false; }
-                        if (EmergenciaOK.Checked) { apagadoEmergencia = true; }
-                        if (EmergenciaERROR.Checked) { apagadoEmergencia = false; }
-                        //equipo
-
-                        string nivelAgua = "";
-                        if (rbNivelAgua1.Checked) nivelAgua = "<min";
-                        if (rbNivelAgua2.Checked) nivelAgua = "min";
-                        if (rbNivelAgua3.Checked) nivelAgua = "opt";
-                        if (rbNivelAgua4.Checked) nivelAgua = "max";
-                        if (rbNivelAgua5.Checked) nivelAgua = ">max";
-                        string presionAgua = PresionAgua.Text;
-                        string temperaturaAgua = TemperaturaAgua.Text;
-                        string presionGas = PresionGas.Text;
-                        string temperaturaChiller = TemperaturaChiller.Text;
-                        //responsable
-                        string realizo = Responsable.Text;
-
-                        //observación
-                        string comentario;
-                        if (obsBox.Text == "Escriba aquí cualquier comentario adicional respecto a ese control.") { comentario = ""; } else { comentario = obsBox.Text; }
-
-                        //fin del formulario
-                        newRegistro.addRegistro(fecha, realizo, nivelAgua, presionAgua, temperaturaAgua, presionGas, temperaturaChiller, comentario, lecturaPresion, lecturaTemperatura, lecturaCentral, lecturaArriba, lecturaAbajo, lecturaIzquierda, lecturaDerecha, lecturaCentralCorregida, lecturaCentralLineaBase, simetriaArribaAbajo, simetriaArribaAbajoLineaBase, simetriaIzquierdaDerecha, simetriaIzquierdaDerechaLineaBase, planicidadIzquierdaDerecha, planicidadArribaAbajo, planicidadArribaAbajoLineaBase, planicidadIzquierdaDerechaLineaBase, laser, distancia, cincox, diezx, veinticincox, mlc, switchPuerta, lucesPuerta, luzConsola, apagadoEmergencia);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("ocurrió algún error en la asignación al objeto Registro");
-                        MessageBox.Show(ex.ToString());
-                    }
-                    #endregion
-
-                    //leer la lista actual
-                    //try { lista = ReadFromBinaryFile<List<Registro>>(file); }
-                    try
-                    {
-                        lista = IOarchivos.ReadJsonList<Registro>(file);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("se intentó leer si hay un diccionario antes que nada, hubo un error. Si no existía, se creó y guardó el registro " + ex.ToString());
-                    }
-                    try
-                    {
-                        //agrego el newRegistro a la lista
-                        lista.Add(newRegistro);
-
-                        //escribo en archivo la lista actual
-                        WriteToBinaryFile(file, lista);
-                        IOarchivos.WriteJson(file, lista);
-
-                        //mostrar que se registró
-                        timerRegistro.Enabled = true;
-                        RegistradoOK.Visible = true;
-                    }
-                    catch (Exception ex)
-                    {
-
-                        MessageBox.Show("ocurrió un error al cargar el nuevo registro al diccionario, o al escribir el diccionario en el archivo " + ex.ToString());
-                    }
-                }
-                if (dialog == DialogResult.No)
-                {
-
+                    guardarRegistroEnArchivo();
+                    
                 }
             }
             else
             {
-                #region ASIGNACION AL OBJETO REGISTRO
-                try
-                {
-                    string fecha;
-                    if (!dateTimePicker1.Enabled)
-                    {
-                        fecha = DateTime.Now.Date.ToShortDateString();
-                    }
-                    else
-                    {
-                        fecha = dateTimePicker1.Value.Date.ToShortDateString();
-                    }
-
-
-                    //mecánicos
-                    if (LaserOK.Checked) { laser = true; }
-                    if (LaserERROR.Checked) { laser = false; }
-                    if (DistOK.Checked) { distancia = true; }
-                    if (DistERROR.Checked) { distancia = false; }
-                    if (Campo5x5OK.Checked) { cincox = true; }
-                    if (Campo5x5ERROR.Checked) { cincox = false; }
-                    if (Campo10x10OK.Checked) { diezx = true; }
-                    if (Campo10x10ERROR.Checked) { diezx = false; }
-                    if (Campo25x25OK.Checked) { veinticincox = true; }
-                    if (Campo25x25ERROR.Checked) { veinticincox = false; }
-                    if (MLCOK.Checked) { mlc = true; }
-                    if (MLCERROR.Checked) { mlc = false; }
-                    //seguridad
-                    if (SwitchOK.Checked) { switchPuerta = true; }
-                    if (SwitchERROR.Checked) { switchPuerta = false; }
-                    if (LucesOK.Checked) { lucesPuerta = true; }
-                    if (LucesERROR.Checked) { lucesPuerta = false; }
-                    if (IndicadorRadOK.Checked) { luzConsola = true; }
-                    if (IndicadorRadERROR.Checked) { luzConsola = false; }
-                    if (EmergenciaOK.Checked) { apagadoEmergencia = true; }
-                    if (EmergenciaERROR.Checked) { apagadoEmergencia = false; }
-                    //equipo
-                    string nivelAgua = "";
-                    if (rbNivelAgua1.Checked) nivelAgua = "<min";
-                    if (rbNivelAgua2.Checked) nivelAgua = "min";
-                    if (rbNivelAgua3.Checked) nivelAgua = "opt";
-                    if (rbNivelAgua4.Checked) nivelAgua = "max";
-                    if (rbNivelAgua5.Checked) nivelAgua = ">max";
-                    string presionAgua = PresionAgua.Text;
-                    string temperaturaAgua = TemperaturaAgua.Text;
-                    string presionGas = PresionGas.Text;
-                    string temperaturaChiller = TemperaturaChiller.Text;
-                    //responsable
-                    string realizo = Responsable.Text;
-
-                    //observación
-                    string comentario;
-                    if (obsBox.Text == "Escriba aquí cualquier comentario adicional respecto a ese control.") { comentario = ""; } else { comentario = obsBox.Text; }
-
-                    //fin del formulario
-                    newRegistro.addRegistro(fecha, realizo, nivelAgua, presionAgua, temperaturaAgua, presionGas, temperaturaChiller, comentario, lecturaPresion, lecturaTemperatura, lecturaCentral, lecturaArriba, lecturaAbajo, lecturaIzquierda, lecturaDerecha, lecturaCentralCorregida, lecturaCentralLineaBase, simetriaArribaAbajo, simetriaArribaAbajoLineaBase, simetriaIzquierdaDerecha, simetriaIzquierdaDerechaLineaBase, planicidadIzquierdaDerecha, planicidadArribaAbajo, planicidadArribaAbajoLineaBase, planicidadIzquierdaDerechaLineaBase, laser, distancia, cincox, diezx, veinticincox, mlc, switchPuerta, lucesPuerta, luzConsola, apagadoEmergencia);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("ocurrió algún error en la asignación al objeto Registro");
-                    MessageBox.Show(ex.ToString());
-                }
-                #endregion
-
-                //leer la lista actual
-                //try { lista = ReadFromBinaryFile<List<Registro>>(file); }
-                try
-                {
-                    lista = IOarchivos.ReadJsonList<Registro>(file);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("se intentó leer si hay un diccionario antes que nada, hubo un error. Si no existía, se creó y guardó el registro " + ex.ToString());
-                }
-                try
-                {
-                    //agrego el newRegistro a la lista
-                    lista.Add(newRegistro);
-
-                    //escribo en archivo la lista actual
-                    WriteToBinaryFile(file, lista);
-                    IOarchivos.WriteJson(file, lista);
-
-                    //mostrar que se registró
-                    timerRegistro.Enabled = true;
-                    RegistradoOK.Visible = true;
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show("ocurrió un error al cargar el nuevo registro al diccionario, o al escribir el diccionario en el archivo " + ex.ToString());
-                }
-
+                guardarRegistroEnArchivo();
             }
         }
 
+        private void guardarRegistroEnArchivo()
+        {
+            try
+            {
+                string fecha;
+                if (!dateTimePicker1.Enabled)
+                {
+                    //fecha = DateTime.Now.Date.ToShortDateString();
+                    fecha = DateTime.Now.Date.ToString("dd/MM/yyyy");
+                    MessageBox.Show(fecha);
+                }
+                else
+                {
+                    fecha = dateTimePicker1.Value.Date.ToString("dd/MM/yyyy");
+                    //MessageBox.Show(fecha);
+                }
+
+
+                //mecánicos
+                if (LaserOK.Checked) { laser = true; }
+                if (LaserERROR.Checked) { laser = false; }
+                if (DistOK.Checked) { distancia = true; }
+                if (DistERROR.Checked) { distancia = false; }
+                if (Campo5x5OK.Checked) { cincox = true; }
+                if (Campo5x5ERROR.Checked) { cincox = false; }
+                if (Campo10x10OK.Checked) { diezx = true; }
+                if (Campo10x10ERROR.Checked) { diezx = false; }
+                if (Campo25x25OK.Checked) { veinticincox = true; }
+                if (Campo25x25ERROR.Checked) { veinticincox = false; }
+                if (MLCOK.Checked) { mlc = true; }
+                if (MLCERROR.Checked) { mlc = false; }
+                //seguridad
+                if (SwitchOK.Checked) { switchPuerta = true; }
+                if (SwitchERROR.Checked) { switchPuerta = false; }
+                if (LucesOK.Checked) { lucesPuerta = true; }
+                if (LucesERROR.Checked) { lucesPuerta = false; }
+                if (IndicadorRadOK.Checked) { luzConsola = true; }
+                if (IndicadorRadERROR.Checked) { luzConsola = false; }
+                if (EmergenciaOK.Checked) { apagadoEmergencia = true; }
+                if (EmergenciaERROR.Checked) { apagadoEmergencia = false; }
+                //equipo
+                string nivelAgua = "";
+                if (rbNivelAgua1.Checked) nivelAgua = "<min";
+                if (rbNivelAgua2.Checked) nivelAgua = "min";
+                if (rbNivelAgua3.Checked) nivelAgua = "opt";
+                if (rbNivelAgua4.Checked) nivelAgua = "max";
+                if (rbNivelAgua5.Checked) nivelAgua = ">max";
+                string presionAgua = PresionAgua.Text;
+                string temperaturaAgua = TemperaturaAgua.Text;
+                string presionGas = PresionGas.Text;
+                string temperaturaChiller = TemperaturaChiller.Text;
+                //responsable
+                string realizo = Responsable.Text;
+
+                //observación
+                string comentario;
+                if (obsBox.Text == "Escriba aquí cualquier comentario adicional respecto a ese control.") { comentario = ""; } else { comentario = obsBox.Text; }
+
+                //fin del formulario
+                newRegistro.addRegistro(fecha,
+                                        realizo,
+                                        nivelAgua,
+                                        presionAgua,
+                                        temperaturaAgua,
+                                        presionGas,
+                                        temperaturaChiller,
+                                        comentario,
+                                        lecturaPresion,
+                                        lecturaTemperatura,
+                                        lecturaCentral,
+                                        lecturaArriba,
+                                        lecturaAbajo,
+                                        lecturaIzquierda,
+                                        lecturaDerecha,
+                                        Decimal.Round(lecturaCentralCorregida, 3),
+                                        Decimal.Round(lecturaCentralLineaBase, 3),
+                                        Decimal.Round(simetriaArribaAbajo, 3),
+                                        Decimal.Round(simetriaArribaAbajoLineaBase, 3),
+                                        Decimal.Round(simetriaIzquierdaDerecha, 3),
+                                        Decimal.Round(simetriaIzquierdaDerechaLineaBase, 3),
+                                        Decimal.Round(planicidadIzquierdaDerecha, 3),
+                                        Decimal.Round(planicidadArribaAbajo, 3),
+                                        Decimal.Round(planicidadArribaAbajoLineaBase, 3),
+                                        Decimal.Round(planicidadIzquierdaDerechaLineaBase, 3),
+                                        laser,
+                                        distancia,
+                                        cincox,
+                                        diezx,
+                                        veinticincox,
+                                        mlc,
+                                        switchPuerta,
+                                        lucesPuerta,
+                                        luzConsola,
+                                        apagadoEmergencia
+                                        );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ocurrió algún error en la asignación al objeto Registro");
+                MessageBox.Show(ex.ToString());
+            }
+
+
+            //leer la lista actual
+            //try { lista = ReadFromBinaryFile<List<Registro>>(file); }
+            try
+            {
+                lista = IOarchivos.ReadJsonList<Registro>(file);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("se intentó leer si había un archivo de registros antes que nada, hubo un error. Si no existía, se creó y guardó el registro " + ex.ToString());
+            }
+            try
+            {
+                //agrego el newRegistro a la lista
+                lista.Add(newRegistro);
+
+                //escribo en archivo la lista actual
+                //WriteToBinaryFile(file, lista);
+                IOarchivos.WriteJson(file, lista);
+
+                //mostrar que se registró
+                timerRegistro.Enabled = true;
+                RegistradoOK.Visible = true;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("ocurrió un error al cargar el nuevo registro al diccionario, o al escribir el diccionario en el archivo " + ex.ToString());
+            }
+        }
 
         #region update alertas
         public void updateAlertaCentral()
