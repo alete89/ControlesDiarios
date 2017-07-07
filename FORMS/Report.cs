@@ -68,6 +68,7 @@ namespace Controles2016
                 porfecha.Clear();
                 foreach (Registro reg in lista)
                 {
+                    //DateTime freg = DateTime.Parse(reg._fecha, CultureInfo.InvariantCulture);
                     DateTime freg = DateTime.ParseExact(reg._fecha, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                     if (freg >= dateTimePicker1.Value.Date && freg <= dateTimePicker2.Value.Date)
                     {
@@ -107,6 +108,7 @@ namespace Controles2016
             }
             catch (Exception ex)
             {
+                //throw ex;
                 MessageBox.Show("Error al mostrar \n" + ex.ToString());
             }
 
@@ -161,7 +163,7 @@ namespace Controles2016
         {
             DataTable dt = (DataTable)JsonConvert.DeserializeObject(File.ReadAllText(file), typeof(DataTable));
             IOarchivos.CreateCSVFile(ref dt, "excel.csv");
-            IOarchivos.WriteJson("desdecsv.bin", JsonConvert.SerializeObject(File.ReadAllText("excel.csv")));
+            //IOarchivos.WriteJson("desdecsv.bin", JsonConvert.SerializeObject(File.ReadAllText("excel.csv")));
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
