@@ -55,5 +55,21 @@ namespace Controles2016.Forms
             TextBox tb = ((TextBox)sender);
             tb.SelectAll();
         }
+
+        private void nuevoRegistro_Click(object sender, EventArgs e)
+        {
+            // ESTA INSTANCIA NO DEBERÍA ESTAR ACÁ:
+            LecturaTracker unaLecturaTracker = new LecturaTracker(Lectura.validar(LecturaPresion.Text),
+                                                                  Lectura.validar(LecturaTemp.Text),
+                                                                  Lectura.validar(LecturaCentro.Text),
+                                                                  Lectura.validar(LecturaArriba.Text),
+                                                                  Lectura.validar(LecturaAbajo.Text),
+                                                                  Lectura.validar(LecturaIzquierda.Text),
+                                                                  Lectura.validar(LecturaDerecha.Text));
+            ControlMecanico unControlMecanico = new ControlMecanico(true, true, true, true, true, true);
+            Registro nuevoRegistro = new Registro(dateTimePicker1.Text, Realizo.Text, obsBox.Text, unaLecturaTracker, unControlMecanico);
+            IOarchivos.writeJson(@"nuevoregistr.txt", nuevoRegistro);
+
+        }
     }
 }

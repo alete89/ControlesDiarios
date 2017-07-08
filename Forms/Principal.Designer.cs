@@ -553,6 +553,7 @@
             this.nuevoRegistro.TabIndex = 46;
             this.nuevoRegistro.Text = "Registrar";
             this.nuevoRegistro.UseVisualStyleBackColor = true;
+            this.nuevoRegistro.Click += new System.EventHandler(this.nuevoRegistro_Click);
             // 
             // Responsable
             // 
