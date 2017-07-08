@@ -219,6 +219,8 @@
             this.TemperaturaChiller.Name = "TemperaturaChiller";
             this.TemperaturaChiller.Size = new System.Drawing.Size(100, 20);
             this.TemperaturaChiller.TabIndex = 25;
+            this.TemperaturaChiller.Click += new System.EventHandler(this.textbox_OnFocus);
+            this.TemperaturaChiller.Enter += new System.EventHandler(this.textbox_OnFocus);
             // 
             // label17
             // 
@@ -235,6 +237,8 @@
             this.PresionGas.Name = "PresionGas";
             this.PresionGas.Size = new System.Drawing.Size(100, 20);
             this.PresionGas.TabIndex = 24;
+            this.PresionGas.Click += new System.EventHandler(this.textbox_OnFocus);
+            this.PresionGas.Enter += new System.EventHandler(this.textbox_OnFocus);
             // 
             // label16
             // 
@@ -251,6 +255,8 @@
             this.TemperaturaAgua.Name = "TemperaturaAgua";
             this.TemperaturaAgua.Size = new System.Drawing.Size(100, 20);
             this.TemperaturaAgua.TabIndex = 23;
+            this.TemperaturaAgua.Click += new System.EventHandler(this.textbox_OnFocus);
+            this.TemperaturaAgua.Enter += new System.EventHandler(this.textbox_OnFocus);
             // 
             // label15
             // 
@@ -415,6 +421,8 @@
             this.PresionAgua.Name = "PresionAgua";
             this.PresionAgua.Size = new System.Drawing.Size(100, 20);
             this.PresionAgua.TabIndex = 22;
+            this.PresionAgua.Click += new System.EventHandler(this.textbox_OnFocus);
+            this.PresionAgua.Enter += new System.EventHandler(this.textbox_OnFocus);
             // 
             // label14
             // 
@@ -495,13 +503,16 @@
             // obsBox
             // 
             this.obsBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.obsBox.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.obsBox.ForeColor = System.Drawing.Color.Gray;
             this.obsBox.Location = new System.Drawing.Point(6, 19);
             this.obsBox.Multiline = true;
             this.obsBox.Name = "obsBox";
             this.obsBox.Size = new System.Drawing.Size(315, 63);
             this.obsBox.TabIndex = 30;
+            this.obsBox.Tag = "Escriba aquí cualquier comentario adicional respecto a ese control.";
             this.obsBox.Text = "Escriba aquí cualquier comentario adicional respecto a ese control.";
+            this.obsBox.Enter += new System.EventHandler(this.lecturas_Enter);
+            this.obsBox.Leave += new System.EventHandler(this.obsBox_Leave);
             // 
             // checkBox1
             // 
@@ -907,41 +918,41 @@
             // LecturaDerecha
             // 
             this.LecturaDerecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LecturaDerecha.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.LecturaDerecha.ForeColor = System.Drawing.Color.Gray;
             this.LecturaDerecha.Location = new System.Drawing.Point(221, 45);
             this.LecturaDerecha.Name = "LecturaDerecha";
             this.LecturaDerecha.Size = new System.Drawing.Size(100, 20);
             this.LecturaDerecha.TabIndex = 3;
-            this.LecturaDerecha.Tag = "";
+            this.LecturaDerecha.Tag = "Lectura Derecha";
             this.LecturaDerecha.Text = "Lectura Derecha";
-            this.LecturaDerecha.Enter += new System.EventHandler(this.Lecturas_Enter);
-            this.LecturaDerecha.Leave += new System.EventHandler(this.Lecturas_Leave);
+            this.LecturaDerecha.Enter += new System.EventHandler(this.lecturas_Enter);
+            this.LecturaDerecha.Leave += new System.EventHandler(this.lecturas_Leave);
             // 
             // LecturaCentro
             // 
             this.LecturaCentro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LecturaCentro.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.LecturaCentro.ForeColor = System.Drawing.Color.Gray;
             this.LecturaCentro.Location = new System.Drawing.Point(112, 88);
             this.LecturaCentro.Name = "LecturaCentro";
             this.LecturaCentro.Size = new System.Drawing.Size(100, 20);
             this.LecturaCentro.TabIndex = 4;
-            this.LecturaCentro.Tag = "";
+            this.LecturaCentro.Tag = "Lectura Central";
             this.LecturaCentro.Text = "Lectura Central";
-            this.LecturaCentro.Enter += new System.EventHandler(this.Lecturas_Enter);
-            this.LecturaCentro.Leave += new System.EventHandler(this.Lecturas_Leave);
+            this.LecturaCentro.Enter += new System.EventHandler(this.lecturas_Enter);
+            this.LecturaCentro.Leave += new System.EventHandler(this.lecturas_Leave);
             // 
             // LecturaIzquierda
             // 
             this.LecturaIzquierda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LecturaIzquierda.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.LecturaIzquierda.ForeColor = System.Drawing.Color.Gray;
             this.LecturaIzquierda.Location = new System.Drawing.Point(6, 45);
             this.LecturaIzquierda.Name = "LecturaIzquierda";
             this.LecturaIzquierda.Size = new System.Drawing.Size(100, 20);
             this.LecturaIzquierda.TabIndex = 2;
-            this.LecturaIzquierda.Tag = "";
+            this.LecturaIzquierda.Tag = "Lectura Izquierda";
             this.LecturaIzquierda.Text = "Lectura Izquierda";
-            this.LecturaIzquierda.Enter += new System.EventHandler(this.Lecturas_Enter);
-            this.LecturaIzquierda.Leave += new System.EventHandler(this.Lecturas_Leave);
+            this.LecturaIzquierda.Enter += new System.EventHandler(this.lecturas_Enter);
+            this.LecturaIzquierda.Leave += new System.EventHandler(this.lecturas_Leave);
             // 
             // LecturaTemp
             // 
@@ -949,7 +960,9 @@
             this.LecturaTemp.Name = "LecturaTemp";
             this.LecturaTemp.Size = new System.Drawing.Size(68, 20);
             this.LecturaTemp.TabIndex = 6;
-            this.LecturaTemp.Leave += new System.EventHandler(this.Lecturas_Leave);
+            this.LecturaTemp.Click += new System.EventHandler(this.textbox_OnFocus);
+            this.LecturaTemp.Enter += new System.EventHandler(this.textbox_OnFocus);
+            this.LecturaTemp.Leave += new System.EventHandler(this.lecturas_Leave);
             // 
             // label2
             // 
@@ -966,7 +979,9 @@
             this.LecturaPresion.Name = "LecturaPresion";
             this.LecturaPresion.Size = new System.Drawing.Size(67, 20);
             this.LecturaPresion.TabIndex = 5;
-            this.LecturaPresion.Leave += new System.EventHandler(this.Lecturas_Leave);
+            this.LecturaPresion.Click += new System.EventHandler(this.textbox_OnFocus);
+            this.LecturaPresion.Enter += new System.EventHandler(this.textbox_OnFocus);
+            this.LecturaPresion.Leave += new System.EventHandler(this.lecturas_Leave);
             // 
             // Lecturas
             // 
@@ -998,27 +1013,28 @@
             // LecturaAbajo
             // 
             this.LecturaAbajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LecturaAbajo.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.LecturaAbajo.ForeColor = System.Drawing.Color.Gray;
             this.LecturaAbajo.Location = new System.Drawing.Point(112, 62);
             this.LecturaAbajo.Name = "LecturaAbajo";
             this.LecturaAbajo.Size = new System.Drawing.Size(100, 20);
             this.LecturaAbajo.TabIndex = 1;
+            this.LecturaAbajo.Tag = "Lectura Abajo";
             this.LecturaAbajo.Text = "Lectura Abajo";
-            this.LecturaAbajo.Enter += new System.EventHandler(this.Lecturas_Enter);
-            this.LecturaAbajo.Leave += new System.EventHandler(this.Lecturas_Leave);
+            this.LecturaAbajo.Enter += new System.EventHandler(this.lecturas_Enter);
+            this.LecturaAbajo.Leave += new System.EventHandler(this.lecturas_Leave);
             // 
             // LecturaArriba
             // 
             this.LecturaArriba.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LecturaArriba.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.LecturaArriba.ForeColor = System.Drawing.Color.Gray;
             this.LecturaArriba.Location = new System.Drawing.Point(112, 30);
             this.LecturaArriba.Name = "LecturaArriba";
             this.LecturaArriba.Size = new System.Drawing.Size(100, 20);
             this.LecturaArriba.TabIndex = 0;
-            this.LecturaArriba.Tag = "";
+            this.LecturaArriba.Tag = "Lectura Arriba";
             this.LecturaArriba.Text = "Lectura Arriba";
-            this.LecturaArriba.Enter += new System.EventHandler(this.Lecturas_Enter);
-            this.LecturaArriba.Leave += new System.EventHandler(this.Lecturas_Leave);
+            this.LecturaArriba.Enter += new System.EventHandler(this.lecturas_Enter);
+            this.LecturaArriba.Leave += new System.EventHandler(this.lecturas_Leave);
             // 
             // PanelSwitch
             // 

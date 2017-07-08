@@ -16,15 +16,44 @@ namespace Controles2016.Forms
             InitializeComponent();
         }
 
-        private void Lecturas_Enter(object sender, EventArgs e)
+        private void lecturas_Enter(object sender, EventArgs e)
         {
-            ((TextBox)sender).Text = "";
-            ((TextBox)sender).ForeColor = Color.Black;
+            TextBox tb = ((TextBox)sender);
+            if (tb.Text == tb.Tag.ToString())
+            {
+                tb.Text = String.Empty;
+            }
+            tb.ForeColor = Color.Black;
         }
 
-        private void Lecturas_Leave(object sender, EventArgs e)
+        private void lecturas_Leave(object sender, EventArgs e)
         {
-            ((TextBox)sender).Text = ((TextBox)sender).Text.Replace(".", ",");
+            TextBox tb = ((TextBox)sender);
+            tb.Text = tb.Text.Replace(".", ",");
+            if (String.IsNullOrEmpty(tb.Text))
+            {
+                if (tb.Tag != null)
+                {
+                    tb.Text = tb.Tag.ToString();
+                    tb.ForeColor = Color.Gray;
+                }
+            }
+        }
+
+        private void obsBox_Leave(object sender, EventArgs e)
+        {
+            TextBox tb = ((TextBox)sender);
+            if (String.IsNullOrEmpty(tb.Text))
+            {
+                tb.Text = tb.Tag.ToString();
+                tb.ForeColor = Color.Gray;
+            }
+        }
+
+        private void textbox_OnFocus(object sender, EventArgs e)
+        {
+            TextBox tb = ((TextBox)sender);
+            tb.SelectAll();
         }
     }
 }
