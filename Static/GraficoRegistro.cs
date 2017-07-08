@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace Controles2016
 {
-    static class MGraficos
+    static class GraficoRegistro
     {
 
-        public static void graficarperfil(string nombre, string titulo, Vector<decimal> Eje, Vector<decimal> Perfil, Chart Grafico, decimal Tam)
+        public static void graficarPerfil(string nombre, string titulo, Vector<decimal> Eje, Vector<decimal> Perfil, Chart Grafico, decimal Tam)
         {
             FontFamily fuente = new FontFamily("Segoe UI");
             Grafico.Titles.Clear(); Grafico.ChartAreas.Clear(); Grafico.Series.Clear();
@@ -54,7 +54,7 @@ namespace Controles2016
 
             Grafico.Visible = true;
         }
-        public static void graficarregistros(string nombre, string[] Fecha, decimal[] Variable, decimal LBValor, Chart Grafico, decimal Tol)
+        public static void graficarRegistros(string nombre, string[] Fecha, decimal[] Variable, decimal LBValor, Chart Grafico, decimal Tol)
         {
             FontFamily fuente = new FontFamily("Segoe UI");
             decimal[] dFecha = new decimal[Fecha.Count()];
@@ -140,7 +140,7 @@ namespace Controles2016
 
 
         }
-        public static void animareje(Axis eje, decimal valorMinInicial, decimal valorMinFinal, decimal valorMaxInicial, decimal valorMaxFinal, int paso, Chart grafico)
+        public static void animarEje(Axis eje, decimal valorMinInicial, decimal valorMinFinal, decimal valorMaxInicial, decimal valorMaxFinal, int paso, Chart grafico)
         {
             for (int i=0;i<paso;i++)
             {

@@ -14,7 +14,7 @@ namespace Controles2016
 {
     public partial class ReportView : Form
     {
-        static List<Registro> lista = IOarchivos.ReadJsonList<Registro>(file);
+        static List<Registro> lista = IOarchivos.readJsonList<Registro>(file);
         static List<Registro> porfecha = new List<Registro>();
 
         public static LineaBase lb = JsonConvert.DeserializeObject<LineaBase>(File.ReadAllText(@".\LB.bin"));
@@ -45,7 +45,7 @@ namespace Controles2016
         internal void Form2_Load(object sender, EventArgs e)
         {
             Focus();
-            lista = IOarchivos.ReadJsonList<Registro>(file);
+            lista = IOarchivos.readJsonList<Registro>(file);
             label1.Text = "hay un total de " + lista.Count() + " registros";
             Focus();
             BringToFront();
@@ -64,7 +64,7 @@ namespace Controles2016
             try
             {
                 //lista = Form1.ReadFromBinaryFile<List<Registro>>(file);
-                lista = IOarchivos.ReadJsonList<Registro>(file);
+                lista = IOarchivos.readJsonList<Registro>(file);
                 porfecha.Clear();
                 foreach (Registro reg in lista)
                 {
@@ -95,7 +95,7 @@ namespace Controles2016
             try
             {
                 //lista = Form1.ReadFromBinaryFile<List<Registro>>(file);
-                lista = IOarchivos.ReadJsonList<Registro>(file);
+                lista = IOarchivos.readJsonList<Registro>(file);
                 porfecha.Clear();
                 porfecha = lista;
                 dgvRegistros.DataSource = null;
@@ -162,7 +162,7 @@ namespace Controles2016
         private void btnXLS_Click(object sender, EventArgs e)
         {
             DataTable dt = (DataTable)JsonConvert.DeserializeObject(File.ReadAllText(file), typeof(DataTable));
-            IOarchivos.CreateCSVFile(ref dt, "excel.csv");
+            IOarchivos.createCSVFile(ref dt, "excel.csv");
             //IOarchivos.WriteJson("desdecsv.bin", JsonConvert.SerializeObject(File.ReadAllText("excel.csv")));
         }
 
@@ -176,23 +176,23 @@ namespace Controles2016
             int anchoTotal = Convert.ToInt32(printDocument1.DefaultPageSettings.PrintableArea.Width) - printDocument1.DefaultPageSettings.Margins.Left - printDocument1.DefaultPageSettings.Margins.Right;
             int altoTotal = Convert.ToInt32(printDocument1.DefaultPageSettings.PrintableArea.Height) - printDocument1.DefaultPageSettings.Margins.Top - printDocument1.DefaultPageSettings.Margins.Bottom;
 
-            Metodos.imprimirTitulo(e, "Reporte controles diarios", anchoTotal, 0);
-            Metodos.imprimirTexto(e, "Fecha inicial: " + fechas[0].ToString() + "\n" + "Fecha final: " + fechas[fechas.Count() - 1].ToString(), anchoTotal, 70, 4);
-            Metodos.imprimirtabla(e, dgvReportes, anchoTotal, 160);
+            ImprimirRegistro.titulo(e, "Reporte controles diarios", anchoTotal, 0);
+            ImprimirRegistro.texto(e, "Fecha inicial: " + fechas[0].ToString() + "\n" + "Fecha final: " + fechas[fechas.Count() - 1].ToString(), anchoTotal, 70, 4);
+            ImprimirRegistro.tabla(e, dgvReportes, anchoTotal, 160);
 
             int x = 170; int y = 400;
 
-            MGraficos.graficarregistros(etiquetas[0], fechas, Variables[0], lbarray[0], chart1, 0.03m * lbarray[0]);
+            GraficoRegistro.graficarRegistros(etiquetas[0], fechas, Variables[0], lbarray[0], chart1, 0.03m * lbarray[0]);
             chart1.Series[0].MarkerSize = 0;
-            Metodos.imprimirGraficoChico(e, chart1, x, y, chart1.Width, Convert.ToInt32(chart1.Height/1.3));
+            ImprimirRegistro.graficoChico(e, chart1, x, y, chart1.Width, Convert.ToInt32(chart1.Height/1.3));
             y += Convert.ToInt32(chart1.Height / 1.2);
             x = 20;
             for (int i=1;i<5;i++)
             {
-                MGraficos.graficarregistros(etiquetas[i], fechas, Variables[i], lbarray[i], chart1, 3);
+                GraficoRegistro.graficarRegistros(etiquetas[i], fechas, Variables[i], lbarray[i], chart1, 3);
                 chart1.Series[0].MarkerSize = 0;
                 foreach(var serie in chart1.Series) { serie.IsVisibleInLegend = false; }
-                Metodos.imprimirGraficoChico(e, chart1, x, y, Convert.ToInt32(chart1.Width/1.5), Convert.ToInt32(chart1.Height / 1.6));
+                ImprimirRegistro.graficoChico(e, chart1, x, y, Convert.ToInt32(chart1.Width/1.5), Convert.ToInt32(chart1.Height / 1.6));
                 if (i%2!=0)
                 {
                     x += 400;
@@ -217,7 +217,7 @@ namespace Controles2016
                 tol = 0.03m * lbarray[aux];
             }
             else { tol = 3; }
-            MGraficos.graficarregistros(etiquetas[aux], fechas, Variables[aux], lbarray[aux], chart1, tol);
+            GraficoRegistro.graficarRegistros(etiquetas[aux], fechas, Variables[aux], lbarray[aux], chart1, tol);
         }
 
         private void btnPDF_Click_1(object sender, EventArgs e)

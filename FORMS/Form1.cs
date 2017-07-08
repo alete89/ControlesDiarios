@@ -64,7 +64,7 @@ namespace Controles2016
             }
             else
             {
-                IOarchivos.WriteJson(@".\LB.bin", lb);
+                IOarchivos.writeJson(@".\LB.bin", lb);
                 MessageBox.Show("Bienvenido por primera vez!\nSe generó una nueva línea base precargada.");
             }
 
@@ -73,7 +73,7 @@ namespace Controles2016
             try
             {
                 //lista = ReadFromBinaryFile<<Registro>>(file);
-                lista = IOarchivos.ReadJsonList<Registro>(file);
+                lista = IOarchivos.readJsonList<Registro>(file);
             }
             catch (Exception)
             {
@@ -478,7 +478,7 @@ namespace Controles2016
             //try { lista = ReadFromBinaryFile<List<Registro>>(file); }
             try
             {
-                lista = IOarchivos.ReadJsonList<Registro>(file);
+                lista = IOarchivos.readJsonList<Registro>(file);
             }
             catch (Exception ex)
             {
@@ -491,7 +491,7 @@ namespace Controles2016
 
                 //escribo en archivo la lista actual
                 //WriteToBinaryFile(file, lista);
-                IOarchivos.WriteJson(file, lista);
+                IOarchivos.writeJson(file, lista);
 
                 //mostrar que se registró
                 timerRegistro.Enabled = true;

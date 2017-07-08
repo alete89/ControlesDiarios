@@ -80,44 +80,49 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FORMS\About.cs">
+    <Compile Include="Registro\Calculado.cs" />
+    <Compile Include="Registro\ControlEquipo.cs" />
+    <Compile Include="Registro\ControlMecanico.cs" />
+    <Compile Include="Registro\ControlSeguridad.cs" />
+    <Compile Include="Registro\LecturaTracker.cs" />
+    <Compile Include="Registro\Registro.cs" />
+    <Compile Include="Forms\About.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\About.Designer.cs">
+    <Compile Include="Forms\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clases de Métodos\Metodos.cs" />
-    <Compile Include="Clases de Métodos\MGraficos.cs" />
-    <Compile Include="FORMS\PasswordForm.cs">
+    <Compile Include="Static\ImprimirRegistro.cs" />
+    <Compile Include="Static\GraficoRegistro.cs" />
+    <Compile Include="Forms\PasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\PasswordForm.Designer.cs">
+    <Compile Include="Forms\PasswordForm.Designer.cs">
       <DependentUpon>PasswordForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clases de Datos\Registro_Report.cs" />
-    <Compile Include="Clases de Métodos\IOarchivos.cs" />
-    <Compile Include="FORMS\Form1.cs">
+    <Compile Include="Registro\Registro_Report.cs" />
+    <Compile Include="Static\IOarchivos.cs" />
+    <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Form1.Designer.cs">
+    <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clases de Datos\LineaBase.cs" />
-    <Compile Include="FORMS\LineaBaseEdit.cs">
+    <Compile Include="Registro\LineaBase.cs" />
+    <Compile Include="Forms\LineaBaseEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\LineaBaseEdit.Designer.cs">
+    <Compile Include="Forms\LineaBaseEdit.Designer.cs">
       <DependentUpon>LineaBaseEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs" />
     <Compile Include="Properties\Settings.Designer.cs" />
-    <Compile Include="Clases de Datos\Registro.cs" />
-    <Compile Include="FORMS\Report.cs">
+    <Compile Include="Forms\Report.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Report.Designer.cs">
+    <Compile Include="Forms\Report.Designer.cs">
       <DependentUpon>Report.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings1.Designer.cs">
@@ -127,20 +132,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FORMS\About.resx">
+    <EmbeddedResource Include="Forms\About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Form1.resx">
+    <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\LineaBaseEdit.resx">
+    <EmbeddedResource Include="Forms\LineaBaseEdit.resx">
       <DependentUpon>LineaBaseEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\PasswordForm.resx">
+    <EmbeddedResource Include="Forms\PasswordForm.resx">
       <DependentUpon>PasswordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx" />
-    <EmbeddedResource Include="FORMS\Report.resx">
+    <EmbeddedResource Include="Forms\Report.resx">
       <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

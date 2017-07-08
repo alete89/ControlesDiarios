@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Printing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -14,11 +7,9 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Controles2016
 {
-
-    public static class Metodos
+    public static class ImprimirRegistro
     {
-
-        public static void imprimirTitulo(PrintPageEventArgs e, string titulo, int anchohoja, int posicionlinea)
+        public static void titulo(PrintPageEventArgs e, string titulo, int anchohoja, int posicionlinea)
         {
             Font fuentetitulo = new Font("Arial", 30, FontStyle.Bold);
             StringFormat centro = new StringFormat(); centro.Alignment = StringAlignment.Center;
@@ -26,7 +17,7 @@ namespace Controles2016
             Rectangle rect = new Rectangle(0, posicionlinea, anchohoja, posicionlinea);
             e.Graphics.DrawString(titulo, fuentetitulo, color, rect, centro);
         }
-        public static void imprimirTexto(PrintPageEventArgs e, string texto, int anchohoja, int posicionlinea, int numlineas)
+        public static void texto(PrintPageEventArgs e, string texto, int anchohoja, int posicionlinea, int numlineas)
         {
             Font fuentetexto = new Font("Arial", 12, FontStyle.Regular);
             StringFormat izquierda = new StringFormat(); izquierda.Alignment = StringAlignment.Near;
@@ -34,19 +25,19 @@ namespace Controles2016
             Rectangle rect = new Rectangle(0, posicionlinea, anchohoja, posicionlinea*numlineas);
             e.Graphics.DrawString(texto, fuentetexto, color, rect, izquierda);
         }
-        public static void imprimirGrafico(PrintPageEventArgs e, Chart grafico, int anchohoja, int posicionlinea)
+        public static void grafico(PrintPageEventArgs e, Chart grafico, int anchohoja, int posicionlinea)
         {
             Rectangle rect = new Rectangle((anchohoja - grafico.Width) / 2, posicionlinea, grafico.Width, grafico.Height);
             grafico.Printing.PrintPaint(e.Graphics, rect);
         }
 
-        public static void imprimirGraficoChico(PrintPageEventArgs e, Chart grafico, int x, int y, int ancho, int alto)
+        public static void graficoChico(PrintPageEventArgs e, Chart grafico, int x, int y, int ancho, int alto)
         {
             Rectangle rect = new Rectangle(x, y, ancho, alto);
             grafico.Printing.PrintPaint(e.Graphics, rect);
         }
 
-        public static void imprimirtabla(PrintPageEventArgs e, DataGridView tabla, int anchohoja, int posicionlinea)
+        public static void tabla(PrintPageEventArgs e, DataGridView tabla, int anchohoja, int posicionlinea)
         {
             int x_value = (anchohoja-tabla.Width)/2;
             int y_value = posicionlinea;
