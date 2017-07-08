@@ -80,6 +80,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registro\Calculado.cs" />
     <Compile Include="Registro\ControlEquipo.cs" />
     <Compile Include="Registro\ControlMecanico.cs" />
@@ -94,37 +100,13 @@
     </Compile>
     <Compile Include="Static\ImprimirRegistro.cs" />
     <Compile Include="Static\GraficoRegistro.cs" />
-    <Compile Include="Forms\PasswordForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PasswordForm.Designer.cs">
-      <DependentUpon>PasswordForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Registro\Registro_Report.cs" />
     <Compile Include="Static\IOarchivos.cs" />
-    <Compile Include="Forms\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Registro\LineaBase.cs" />
-    <Compile Include="Forms\LineaBaseEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\LineaBaseEdit.Designer.cs">
-      <DependentUpon>LineaBaseEdit.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs" />
     <Compile Include="Properties\Settings.Designer.cs" />
-    <Compile Include="Forms\Report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Report.Designer.cs">
-      <DependentUpon>Report.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -135,19 +117,10 @@
     <EmbeddedResource Include="Forms\About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LineaBaseEdit.resx">
-      <DependentUpon>LineaBaseEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PasswordForm.resx">
-      <DependentUpon>PasswordForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx" />
-    <EmbeddedResource Include="Forms\Report.resx">
-      <DependentUpon>Report.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\" />
