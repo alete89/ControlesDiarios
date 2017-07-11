@@ -7,19 +7,19 @@ namespace Controles2016
     {
         public ControlMecanico(bool laser, bool distancia, bool cincox, bool diezx, bool veinticincox, bool mlc)
         {
-            _laser = laser;
-            _distancia = distancia;
-            _cincox = cincox;
-            _diezx = diezx;
-            _veinticincox = veinticincox;
-            _mlc = mlc;
+            this.laser = laser;
+            this.distancia = distancia;
+            this.cincox = cincox;
+            this.diezx = diezx;
+            this.veinticincox = veinticincox;
+            this.mlc = mlc;
         }
 
-        bool _laser { get; set; }
-        bool _distancia { get; set; }
-        bool _cincox { get; set; }
-        bool _diezx { get; set; }
-        bool _veinticincox { get; set; }
-        bool _mlc { get; set; }
+        bool laser { get; set; }
+        bool distancia { get; set; }
+        bool cincox { get; set; }
+        bool diezx { get; set; }
+        bool veinticincox { get; set; }
+        bool mlc { get; set; }
     }
 }
