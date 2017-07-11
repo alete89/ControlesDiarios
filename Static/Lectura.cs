@@ -10,8 +10,13 @@ namespace Controles2016
     {
         public static decimal validar(string ingresado)
         {
-            if (ingresado == null) throw new ArgumentNullException(nameof(ingresado));
-            return Decimal.Parse(ingresado, CultureInfo.CurrentCulture);
+            if (String.IsNullOrEmpty(ingresado)) throw new ArgumentNullException(nameof(ingresado));
+            string conPunto = ingresado.Replace(".", ",");
+            if (Decimal.TryParse(conPunto, out decimal decimalResult))
+            {
+                return decimalResult;
+            }
+            throw new ArgumentException("error parseando", nameof(ingresado));
         }
     }
 }
