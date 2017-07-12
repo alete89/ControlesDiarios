@@ -927,7 +927,6 @@
             this.LecturaDerecha.Tag = "Lectura Derecha";
             this.LecturaDerecha.Text = "Lectura Derecha";
             this.LecturaDerecha.Enter += new System.EventHandler(this.lecturas_Enter);
-            this.LecturaDerecha.Leave += new System.EventHandler(this.lecturas_Leave);
             // 
             // LecturaCentro
             // 
@@ -940,7 +939,6 @@
             this.LecturaCentro.Tag = "Lectura Central";
             this.LecturaCentro.Text = "Lectura Central";
             this.LecturaCentro.Enter += new System.EventHandler(this.lecturas_Enter);
-            this.LecturaCentro.Leave += new System.EventHandler(this.lecturas_Leave);
             // 
             // LecturaIzquierda
             // 
@@ -953,7 +951,6 @@
             this.LecturaIzquierda.Tag = "Lectura Izquierda";
             this.LecturaIzquierda.Text = "Lectura Izquierda";
             this.LecturaIzquierda.Enter += new System.EventHandler(this.lecturas_Enter);
-            this.LecturaIzquierda.Leave += new System.EventHandler(this.lecturas_Leave);
             // 
             // LecturaTemp
             // 
@@ -963,7 +960,6 @@
             this.LecturaTemp.TabIndex = 6;
             this.LecturaTemp.Click += new System.EventHandler(this.textbox_OnFocus);
             this.LecturaTemp.Enter += new System.EventHandler(this.textbox_OnFocus);
-            this.LecturaTemp.Leave += new System.EventHandler(this.lecturas_Leave);
             // 
             // label2
             // 
@@ -982,7 +978,6 @@
             this.LecturaPresion.TabIndex = 5;
             this.LecturaPresion.Click += new System.EventHandler(this.textbox_OnFocus);
             this.LecturaPresion.Enter += new System.EventHandler(this.textbox_OnFocus);
-            this.LecturaPresion.Leave += new System.EventHandler(this.lecturas_Leave);
             // 
             // Lecturas
             // 
@@ -1022,7 +1017,6 @@
             this.LecturaAbajo.Tag = "Lectura Abajo";
             this.LecturaAbajo.Text = "Lectura Abajo";
             this.LecturaAbajo.Enter += new System.EventHandler(this.lecturas_Enter);
-            this.LecturaAbajo.Leave += new System.EventHandler(this.lecturas_Leave);
             // 
             // LecturaArriba
             // 
@@ -1035,7 +1029,6 @@
             this.LecturaArriba.Tag = "Lectura Arriba";
             this.LecturaArriba.Text = "Lectura Arriba";
             this.LecturaArriba.Enter += new System.EventHandler(this.lecturas_Enter);
-            this.LecturaArriba.Leave += new System.EventHandler(this.lecturas_Leave);
             // 
             // PanelSwitch
             // 

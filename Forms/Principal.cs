@@ -26,20 +26,6 @@ namespace Controles2016.Forms
             tb.ForeColor = Color.Black;
         }
 
-        private void lecturas_Leave(object sender, EventArgs e)
-        {
-            TextBox tb = ((TextBox)sender);
-            tb.Text = tb.Text.Replace(".", ",");
-            if (String.IsNullOrEmpty(tb.Text))
-            {
-                if (tb.Tag != null)
-                {
-                    tb.Text = tb.Tag.ToString();
-                    tb.ForeColor = Color.Gray;
-                }
-            }
-        }
-
         private void obsBox_Leave(object sender, EventArgs e)
         {
             TextBox tb = ((TextBox)sender);
