@@ -8,21 +8,21 @@ namespace Controles2016
 
         public LecturaTracker(decimal lecturaPresion, decimal lecturaTemperatura, decimal lecturaCentral, decimal lecturaArriba, decimal lecturaAbajo, decimal lecturaIzquierda, decimal lecturaDerecha)
         {
-            _lecturaPresion = lecturaPresion;
-            _lecturaTemperatura = lecturaTemperatura;
-            _lecturaCentral = lecturaCentral;
-            _lecturaArriba = lecturaArriba;
-            _lecturaAbajo = lecturaAbajo;
-            _lecturaIzquierda = lecturaIzquierda;
-            _lecturaDerecha = lecturaDerecha;
+            this.lecturaPresion = lecturaPresion;
+            this.lecturaTemperatura = lecturaTemperatura;
+            this.lecturaCentral = lecturaCentral;
+            this.lecturaArriba = lecturaArriba;
+            this.lecturaAbajo = lecturaAbajo;
+            this.lecturaIzquierda = lecturaIzquierda;
+            this.lecturaDerecha = lecturaDerecha;
         }
 
-        decimal _lecturaPresion { get; set; }
-        decimal _lecturaTemperatura { get; set; }
-        decimal _lecturaCentral { get; set; }
-        decimal _lecturaArriba { get; set; }
-        decimal _lecturaAbajo { get; set; }
-        decimal _lecturaIzquierda { get; set; }
-        decimal _lecturaDerecha { get; set; }
+        decimal lecturaPresion { get; set; }
+        decimal lecturaTemperatura { get; set; }
+        decimal lecturaCentral { get; set; }
+        decimal lecturaArriba { get; set; }
+        decimal lecturaAbajo { get; set; }
+        decimal lecturaIzquierda { get; set; }
+        decimal lecturaDerecha { get; set; }
     }
 }
