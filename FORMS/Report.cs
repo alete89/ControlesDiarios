@@ -14,7 +14,7 @@ namespace Controles2016
 {
     public partial class ReportView : Form
     {
-        static List<Registro> lista = IOarchivos.ReadJsonList<Registro>(file);
+        static List<Registro> lista = IOarchivos.readJsonList<Registro>(file);
         static List<Registro> porfecha = new List<Registro>();
 
         public static LineaBase lb = JsonConvert.DeserializeObject<LineaBase>(File.ReadAllText(@".\LB.bin"));
@@ -45,7 +45,7 @@ namespace Controles2016
         internal void Form2_Load(object sender, EventArgs e)
         {
             Focus();
-            lista = IOarchivos.ReadJsonList<Registro>(file);
+            lista = IOarchivos.readJsonList<Registro>(file);
             label1.Text = "hay un total de " + lista.Count() + " registros";
             Focus();
             BringToFront();
@@ -64,7 +64,7 @@ namespace Controles2016
             try
             {
                 //lista = Form1.ReadFromBinaryFile<List<Registro>>(file);
-                lista = IOarchivos.ReadJsonList<Registro>(file);
+                lista = IOarchivos.readJsonList<Registro>(file);
                 porfecha.Clear();
                 foreach (Registro reg in lista)
                 {
@@ -95,7 +95,7 @@ namespace Controles2016
             try
             {
                 //lista = Form1.ReadFromBinaryFile<List<Registro>>(file);
-                lista = IOarchivos.ReadJsonList<Registro>(file);
+                lista = IOarchivos.readJsonList<Registro>(file);
                 porfecha.Clear();
                 porfecha = lista;
                 dgvRegistros.DataSource = null;
@@ -162,7 +162,7 @@ namespace Controles2016
         private void btnXLS_Click(object sender, EventArgs e)
         {
             DataTable dt = (DataTable)JsonConvert.DeserializeObject(File.ReadAllText(file), typeof(DataTable));
-            IOarchivos.CreateCSVFile(ref dt, "excel.csv");
+            IOarchivos.createCSVFile(ref dt, "excel.csv");
             //IOarchivos.WriteJson("desdecsv.bin", JsonConvert.SerializeObject(File.ReadAllText("excel.csv")));
         }
 

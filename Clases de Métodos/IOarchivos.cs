@@ -16,12 +16,12 @@ namespace Controles2016
 
         public static void appendJson<T>(string file, object theObj)
         {
-            List<T> lista = ReadJsonList<T>(file);
+            List<T> lista = readJsonList<T>(file);
             lista.Add((T)theObj);
             writeJson(file, lista);
         }
 
-        public static List<T> ReadJsonList<T>(string file)
+        public static List<T> readJsonList<T>(string file)
         {
             try
             {
@@ -39,7 +39,7 @@ namespace Controles2016
 
 
 
-        public static void CreateCSVFile(ref DataTable dt, string strFilePath)
+        public static void createCSVFile(ref DataTable dt, string strFilePath)
         {
             try
             {

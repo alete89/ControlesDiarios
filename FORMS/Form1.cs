@@ -56,7 +56,7 @@ namespace Controles2016
         }
 
         #region eventos FORM enter leave y focus select
-        public void Form1_Load(object sender, EventArgs e)
+        public void form1_Load(object sender, EventArgs e)
         {
             if (File.Exists(@".\LB.bin"))
             {
@@ -64,7 +64,7 @@ namespace Controles2016
             }
             else
             {
-                IOarchivos.WriteJson(@".\LB.bin", lb);
+                IOarchivos.writeJson(@".\LB.bin", lb);
                 MessageBox.Show("Bienvenido por primera vez!\nSe generó una nueva línea base precargada.");
             }
 
@@ -73,7 +73,7 @@ namespace Controles2016
             try
             {
                 //lista = ReadFromBinaryFile<<Registro>>(file);
-                lista = IOarchivos.ReadJsonList<Registro>(file);
+                lista = IOarchivos.readJsonList<Registro>(file);
             }
             catch (Exception)
             {
@@ -257,7 +257,7 @@ namespace Controles2016
             }
         }
 
-        public void LecturaTemp_Leave(object sender, EventArgs e)
+        public void lecturaTemp_Leave(object sender, EventArgs e)
         {
             if (LecturaTemp.Text.Length != 0)
             {
@@ -478,7 +478,7 @@ namespace Controles2016
             //try { lista = ReadFromBinaryFile<List<Registro>>(file); }
             try
             {
-                lista = IOarchivos.ReadJsonList<Registro>(file);
+                lista = IOarchivos.readJsonList<Registro>(file);
             }
             catch (Exception ex)
             {
@@ -491,7 +491,7 @@ namespace Controles2016
 
                 //escribo en archivo la lista actual
                 //WriteToBinaryFile(file, lista);
-                IOarchivos.WriteJson(file, lista);
+                IOarchivos.writeJson(file, lista);
 
                 //mostrar que se registró
                 timerRegistro.Enabled = true;
@@ -678,7 +678,7 @@ namespace Controles2016
         /// <param name="filePath">The file path to write the object instance to.</param>
         /// <param name="objectToWrite">The object instance to write to the XML file.</param>
         /// <param name="append">If false the file will be overwritten if it already exists. If true the contents will be appended to the file.</param>
-        public static void WriteToBinaryFile<T>(string filePath, T objectToWrite, bool append = false)
+        public static void writeToBinaryFile<T>(string filePath, T objectToWrite, bool append = false)
         {
             using (Stream stream = File.Open(filePath, append ? FileMode.Append : FileMode.Create))
             {
@@ -693,7 +693,7 @@ namespace Controles2016
         /// <typeparam name="T">The type of object to read from the XML.</typeparam>
         /// <param name="filePath">The file path to read the object instance from.</param>
         /// <returns>Returns a new instance of the object read from the binary file.</returns>
-        public static T ReadFromBinaryFile<T>(string filePath)
+        public static T readFromBinaryFile<T>(string filePath)
         {
             using (Stream stream = File.Open(filePath, FileMode.Open))
             {

@@ -15,7 +15,7 @@ namespace Controles2016
             InitializeComponent();
         }
 
-        public void LineaBaseEdit_Load(object sender, EventArgs e)
+        public void lineaBaseEdit_Load(object sender, EventArgs e)
         {
 
             LBlecturaCentral.Text = Form1.lb.central.ToString();
@@ -40,7 +40,7 @@ namespace Controles2016
             Form1.lb.planicidadIzquierdaDerecha = Convert.ToDecimal(LBplanicidadID.Text);
             Form1.lb.simetriaArribaAbajo = Convert.ToDecimal(LBsimetriaAA.Text);
             Form1.lb.simetriaIzquierdaDerecha = Convert.ToDecimal(LBsimetriaID.Text);
-            IOarchivos.WriteJson(@".\LB.bin",Form1.lb);
+            IOarchivos.writeJson(@".\LB.bin",Form1.lb);
             MessageBox.Show("Nueva línea base guardada en archivo.");
         }
 

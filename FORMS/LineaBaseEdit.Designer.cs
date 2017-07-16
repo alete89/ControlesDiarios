@@ -180,7 +180,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Editar valores de referencia";
-            this.Load += new System.EventHandler(this.LineaBaseEdit_Load);
+            this.Load += new System.EventHandler(this.lineaBaseEdit_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

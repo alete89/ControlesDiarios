@@ -234,7 +234,7 @@
             this.LecturaTemp.TabIndex = 6;
             this.LecturaTemp.Click += new System.EventHandler(this.lecturaTemperatura_Focus);
             this.LecturaTemp.Enter += new System.EventHandler(this.lecturaTemperatura_Focus);
-            this.LecturaTemp.Leave += new System.EventHandler(this.LecturaTemp_Leave);
+            this.LecturaTemp.Leave += new System.EventHandler(this.lecturaTemp_Leave);
             // 
             // label2
             // 
@@ -997,7 +997,7 @@
             this.HOY.Size = new System.Drawing.Size(42, 13);
             this.HOY.TabIndex = 15;
             this.HOY.Text = "FECHA";
-            this.HOY.Click += new System.EventHandler(this.Form1_Load);
+            this.HOY.Click += new System.EventHandler(this.form1_Load);
             // 
             // timer1
             // 
@@ -1121,7 +1121,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Controles Diarios UNIQUE #2088";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.form1_Load);
             this.Lecturas.ResumeLayout(false);
             this.Lecturas.PerformLayout();
             this.Mecánicos.ResumeLayout(false);
