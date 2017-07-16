@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -43,28 +42,18 @@ namespace Controles2016.Forms
             tb.SelectAll();
         }
 
-        private LecturaTracker getLecturas()
-        {
-            return new LecturaTracker(Lectura.validar(LecturaPresion.Text),
-                                                   Lectura.validar(LecturaTemp.Text),
-                                                   Lectura.validar(LecturaCentro.Text),
-                                                   Lectura.validar(LecturaArriba.Text),
-                                                   Lectura.validar(LecturaAbajo.Text),
-                                                   Lectura.validar(LecturaIzquierda.Text),
-                                                   Lectura.validar(LecturaDerecha.Text));
-        }
-
-        private ControlMecanico getMecanicos()
-        {
-            return new ControlMecanico(true, true, true, true, true, true);
-        }
-
         private void nuevoRegistro_Click(object sender, EventArgs e)
         {
             // ESTA INSTANCIA NO DEBERÍA ESTAR ACÁ:
-            
-            
-            Registro nuevoRegistro = new Registro(dateTimePicker1.Text, Responsable.Text, obsBox.Text, getLecturas(), getMecanicos());
+            LecturaTracker unaLecturaTracker = new LecturaTracker(Lectura.validar(LecturaPresion.Text),
+                                                                  Lectura.validar(LecturaTemp.Text),
+                                                                  Lectura.validar(LecturaCentro.Text),
+                                                                  Lectura.validar(LecturaArriba.Text),
+                                                                  Lectura.validar(LecturaAbajo.Text),
+                                                                  Lectura.validar(LecturaIzquierda.Text),
+                                                                  Lectura.validar(LecturaDerecha.Text));
+            ControlMecanico unControlMecanico = new ControlMecanico(true, true, true, true, true, true);
+            Registro nuevoRegistro = new Registro(dateTimePicker1.Text, Realizo.Text, obsBox.Text, unaLecturaTracker, unControlMecanico);
             IOarchivos.writeJson(@"nuevoregistr.txt", nuevoRegistro);
 
         }
