@@ -11,14 +11,14 @@ namespace Controles2016
     {
         public static void writeJson(string file, object theObj)
         {
-            File.WriteAllText(file, JsonConvert.SerializeObject(theObj));
+            File.WriteAllText(file, JsonConvert.SerializeObject(theObj, Formatting.Indented));
         }
 
         public static void appendJson<T>(string file, object theObj)
         {
             List<T> lista = readJsonList<T>(file);
             lista.Add((T)theObj);
-            File.WriteAllText(file, JsonConvert.SerializeObject(lista));
+            writeJson(file, lista);
         }
 
         public static List<T> readJsonList<T>(string file)
