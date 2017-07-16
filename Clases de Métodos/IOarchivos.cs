@@ -9,16 +9,16 @@ namespace Controles2016
 {
     static class IOarchivos
     {
-        public static void WriteJson(string file, object theObj)
+        public static void writeJson(string file, object theObj)
         {
-            File.WriteAllText(file, JsonConvert.SerializeObject(theObj));
+            File.WriteAllText(file, JsonConvert.SerializeObject(theObj, Formatting.Indented));
         }
 
-        public static void AppendJson<T>(string file, object theObj)
+        public static void appendJson<T>(string file, object theObj)
         {
             List<T> lista = ReadJsonList<T>(file);
             lista.Add((T)theObj);
-            File.WriteAllText(file, JsonConvert.SerializeObject(lista));
+            writeJson(file, lista);
         }
 
         public static List<T> ReadJsonList<T>(string file)
