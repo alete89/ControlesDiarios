@@ -3,7 +3,7 @@
 namespace Controles2016
 {
     [Serializable]
-    internal class ControlMecanico
+    public class ControlMecanico
     {
         public ControlMecanico(bool laser, bool distancia, bool cincox, bool diezx, bool veinticincox, bool mlc)
         {
@@ -15,11 +15,11 @@ namespace Controles2016
             this.mlc = mlc;
         }
 
-        bool laser { get; set; }
-        bool distancia { get; set; }
-        bool cincox { get; set; }
-        bool diezx { get; set; }
-        bool veinticincox { get; set; }
-        bool mlc { get; set; }
+        public bool laser { get; set; }
+        public bool distancia { get; set; }
+        public bool cincox { get; set; }
+        public bool diezx { get; set; }
+        public bool veinticincox { get; set; }
+        public bool mlc { get; set; }
     }
 }

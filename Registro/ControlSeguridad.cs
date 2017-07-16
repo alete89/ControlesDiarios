@@ -3,7 +3,7 @@
 namespace Controles2016
 {
     [Serializable]
-    internal class ControlSeguridad
+    public class ControlSeguridad
     {
         bool _switchPuerta { get; set; }
         bool _lucesPuerta { get; set; }
