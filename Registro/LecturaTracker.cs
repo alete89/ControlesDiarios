@@ -3,7 +3,7 @@
 namespace Controles2016
 {
     [Serializable]
-    internal class LecturaTracker
+    public class LecturaTracker
     {
 
         public LecturaTracker(decimal lecturaPresion, decimal lecturaTemperatura, decimal lecturaCentral, decimal lecturaArriba, decimal lecturaAbajo, decimal lecturaIzquierda, decimal lecturaDerecha)
@@ -17,12 +17,12 @@ namespace Controles2016
             this.lecturaDerecha = lecturaDerecha;
         }
 
-        decimal lecturaPresion { get; set; }
-        decimal lecturaTemperatura { get; set; }
-        decimal lecturaCentral { get; set; }
-        decimal lecturaArriba { get; set; }
-        decimal lecturaAbajo { get; set; }
-        decimal lecturaIzquierda { get; set; }
-        decimal lecturaDerecha { get; set; }
+        public decimal lecturaPresion { get; set; }
+        public decimal lecturaTemperatura { get; set; }
+        public decimal lecturaCentral { get; set; }
+        public decimal lecturaArriba { get; set; }
+        public decimal lecturaAbajo { get; set; }
+        public decimal lecturaIzquierda { get; set; }
+        public decimal lecturaDerecha { get; set; }
     }
 }
