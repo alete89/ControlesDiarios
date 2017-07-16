@@ -3,7 +3,7 @@
 namespace Controles2016
 {
     [Serializable]
-    public class ControlEquipo
+    internal class ControlEquipo
     {
         string _nivelAgua { get; set; }
         string _presionAgua { get; set; }

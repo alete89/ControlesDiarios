@@ -3,7 +3,7 @@
 namespace Controles2016
 {
     [Serializable]
-    public class Calculado
+    internal class Calculado
     {
         decimal _lecturaCentralCorregida { get; set; }
         decimal _lecturaCentralLineaBase { get; set; }
