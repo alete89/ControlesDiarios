@@ -7,17 +7,20 @@ using System.Windows.Forms;
 
 namespace Controles2016
 {
-    public class Lectura
+    public class Validar
     {
-        public static decimal validar(string ingresado)
+        public static bool lecturaValida(string ingresado)
         {
-            if (String.IsNullOrEmpty(ingresado)) MessageBox.Show("string es null o empty");
+            if (String.IsNullOrEmpty(ingresado)) return false;
             string conPunto = ingresado.Replace(".", ",");
-            if (Decimal.TryParse(conPunto, out decimal decimalResult))
-            {
-                return decimalResult;
-            }
-            throw new ArgumentException("error parseando", nameof(ingresado));
+            return (Decimal.TryParse(conPunto, out decimal decimalResult));
+        }
+
+        public static decimal lecturaDecimal(string ingresado)
+        {
+            string conPunto = ingresado.Replace(".", ",");
+            var fullDecimal = Decimal.Parse(conPunto);
+            return Decimal.Round(fullDecimal, 3);
         }
     }
 }
