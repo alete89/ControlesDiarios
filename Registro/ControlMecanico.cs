@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Controles2016
 {
@@ -13,6 +14,16 @@ namespace Controles2016
             this.diezx = diezx;
             this.veinticincox = veinticincox;
             this.mlc = mlc;
+        }
+
+        public ControlMecanico(List<bool> lista)
+        {
+            this.mlc = lista[0];
+            this.veinticincox = lista[1];
+            this.diezx = lista[2];
+            this.cincox = lista[3];
+            this.distancia = lista[4];
+            this.laser = lista[5];
         }
 
         public bool laser { get; set; }
