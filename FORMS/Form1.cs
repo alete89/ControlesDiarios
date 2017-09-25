@@ -361,8 +361,19 @@ namespace Controles2016
                 DialogResult dialog = MessageBox.Show("Algún campo quedó sin completar. ¿Desea registrar de todos modos?", "Alerta", MessageBoxButtons.YesNo);
                 if (dialog == DialogResult.Yes)
                 {
-                    guardarRegistroEnArchivo();
-
+                    if (chequearValoresAl5deTolerancia())
+                    {
+                        guardarRegistroEnArchivo();
+                    }
+                    else
+                    {
+                        FORMS.CustomMessageBox cmb = new FORMS.CustomMessageBox();
+                        cmb.ShowDialog();
+                        if (cmb.DialogResult == DialogResult.OK)
+                        {
+                            guardarRegistroEnArchivo();
+                        }
+                    }
                 }
             }
             else
@@ -380,12 +391,10 @@ namespace Controles2016
                 {
                     //fecha = DateTime.Now.Date.ToShortDateString();
                     fecha = DateTime.Now.Date.ToString("dd/MM/yyyy");
-                    MessageBox.Show(fecha);
                 }
                 else
                 {
                     fecha = dateTimePicker1.Value.Date.ToString("dd/MM/yyyy");
-                    //MessageBox.Show(fecha);
                 }
 
 
@@ -800,6 +809,23 @@ namespace Controles2016
                 }
             }
             return valor;
+        }
+
+        private bool chequearValoresAl5deTolerancia()
+        {
+            if (Math.Abs(lecturaCentralLineaBase)>5 ||
+                Math.Abs(planicidadIzquierdaDerechaLineaBase)>5 ||
+                Math.Abs(planicidadArribaAbajoLineaBase) > 5 ||
+                Math.Abs(simetriaIzquierdaDerechaLineaBase) > 5 ||
+                Math.Abs(simetriaArribaAbajoLineaBase) > 5 )
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
         }
     }
 }

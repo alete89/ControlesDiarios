@@ -88,6 +88,12 @@
     </Compile>
     <Compile Include="Clases de Métodos\Metodos.cs" />
     <Compile Include="Clases de Métodos\MGraficos.cs" />
+    <Compile Include="FORMS\CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\CustomMessageBox.Designer.cs">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\PasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FORMS\About.resx">
       <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\CustomMessageBox.resx">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

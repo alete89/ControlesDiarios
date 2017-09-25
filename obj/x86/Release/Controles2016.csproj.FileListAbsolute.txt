@@ -58,3 +58,4 @@ C:\Users\alete\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.Repor
 C:\Users\alete\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.csproj.GenerateResource.Cache
 C:\Users\alete\Source\Repos\ControlesDiarios\obj\x86\Release\Controles 2016 pre release.exe
 C:\Users\alete\Source\Repos\ControlesDiarios\obj\x86\Release\Controles 2016 pre release.pdb
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.FORMS.CustomMessageBox.resources
