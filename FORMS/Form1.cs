@@ -13,7 +13,7 @@ namespace Controles2016
         const string file = @".\REGISTROS.bin";
         public static LineaBase lb = new LineaBase();
         Registro newRegistro = new Registro();
-        
+
         LineaBaseEdit form2 = new LineaBaseEdit();
 
         public static Form1 instancia = null;
@@ -68,7 +68,7 @@ namespace Controles2016
                 MessageBox.Show("Bienvenido por primera vez!\nSe generó una nueva línea base precargada.");
             }
 
-                HOY.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            HOY.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
             try
             {
@@ -94,7 +94,7 @@ namespace Controles2016
                 else
                 {
                     ((TextBox)sender).Text = ((TextBox)sender).Text.Replace(".", ",");
-                    lecturaArriba = decimal.Parse(LecturaArriba.Text);
+                    lecturaArriba = chequearLimitesyGuardar((TextBox)sender, 90, 120);
                 }
             }
             catch (Exception)
@@ -129,7 +129,7 @@ namespace Controles2016
                 else
                 {
                     ((TextBox)sender).Text = ((TextBox)sender).Text.Replace(".", ",");
-                    lecturaAbajo = decimal.Parse(LecturaAbajo.Text);
+                    lecturaAbajo = chequearLimitesyGuardar((TextBox)sender, 90, 120);
                 }
             }
             catch (Exception)
@@ -164,7 +164,7 @@ namespace Controles2016
                 else
                 {
                     ((TextBox)sender).Text = ((TextBox)sender).Text.Replace(".", ",");
-                    lecturaDerecha = decimal.Parse(LecturaDerecha.Text);
+                    lecturaDerecha = chequearLimitesyGuardar((TextBox)sender, 90, 120);
                 }
             }
             catch (Exception)
@@ -199,7 +199,7 @@ namespace Controles2016
                 else
                 {
                     ((TextBox)sender).Text = ((TextBox)sender).Text.Replace(".", ",");
-                    lecturaIzquierda = decimal.Parse(LecturaIzquierda.Text);
+                    lecturaIzquierda = chequearLimitesyGuardar((TextBox)sender, 90, 120);
                 }
             }
             catch (Exception)
@@ -234,7 +234,7 @@ namespace Controles2016
                 try
                 {
                     ((TextBox)sender).Text = ((TextBox)sender).Text.Replace(".", ",");
-                    lecturaCentral = decimal.Parse(LecturaCentro.Text);
+                    lecturaCentral = chequearLimitesyGuardar((TextBox)sender, 90, 120);
                 }
                 catch (Exception)
                 {
@@ -264,7 +264,7 @@ namespace Controles2016
                 try
                 {
                     ((TextBox)sender).Text = ((TextBox)sender).Text.Replace(".", ",");
-                    lecturaTemperatura = decimal.Parse(LecturaTemp.Text);
+                    lecturaTemperatura = chequearLimitesyGuardar((TextBox)sender, 10, 30);
                 }
                 catch (Exception)
                 {
@@ -281,7 +281,7 @@ namespace Controles2016
                 try
                 {
                     ((TextBox)sender).Text = ((TextBox)sender).Text.Replace(".", ",");
-                    lecturaPresion = decimal.Parse(LecturaPresion.Text);
+                    lecturaPresion = chequearLimitesyGuardar((TextBox)sender, 800, 1200);
                 }
                 catch (Exception)
                 {
@@ -362,7 +362,7 @@ namespace Controles2016
                 if (dialog == DialogResult.Yes)
                 {
                     guardarRegistroEnArchivo();
-                    
+
                 }
             }
             else
@@ -558,7 +558,7 @@ namespace Controles2016
             catch (Exception)
             {
 
-               // throw;
+                // throw;
             }
             if (planicidadIzquierdaDerechaLineaBase > 2)
             {
@@ -750,12 +750,12 @@ namespace Controles2016
             PresionGas.Text = "";
             TemperaturaChiller.Text = "";
             Responsable.Text = "";
-            if (chkOtraFecha.Checked==true)
+            if (chkOtraFecha.Checked == true)
             {
                 chkOtraFecha.Checked = false;
                 dateTimePicker1.Value = DateTime.Now;
                 dateTimePicker1.Enabled = false;
-                
+
             }
             LaserOK.Checked = false;
             LaserERROR.Checked = false;
@@ -786,6 +786,20 @@ namespace Controles2016
         {
             About ab = new About();
             ab.ShowDialog();
+        }
+
+        private decimal chequearLimitesyGuardar(TextBox tb, decimal limiteInf, decimal limiteSup)
+        {
+            decimal valor = decimal.Parse(tb.Text);
+            if (valor < limiteInf || valor > limiteSup)
+            {
+                if (MessageBox.Show("El valor ingresado es mucho mayor o mucho menor de lo esperado.\n¿Está seguro que lo ha escrito correctamente?", "Posible Error", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+                {
+                    tb.Focus(); tb.SelectAll();
+                    return 0;
+                }
+            }
+            return valor;
         }
     }
 }
