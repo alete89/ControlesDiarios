@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -62,9 +63,10 @@ namespace Controles2016
 
             for (int i = 0; i < Fecha.Count(); i++)
             {
-                DTFecha[i]= DateTime.ParseExact(Fecha[i], "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-                //DTFecha[i] = Convert.ToDateTime(Fecha[i], System.Globalization.CultureInfo.InvariantCulture);
+                string[] formatos = { "dd/MM/yyyy", "dd-MM-yyyy" };
+                DateTime.TryParseExact(Fecha[i], formatos, System.Globalization.CultureInfo.InvariantCulture, DateTimeStyles.None, out DTFecha[i]);
                 dFecha[i] = (decimal)DTFecha[i].ToOADate();
+
             }
 
             Grafico.Titles.Clear(); Grafico.ChartAreas.Clear(); Grafico.Series.Clear(); Grafico.Legends.Clear();
@@ -73,7 +75,7 @@ namespace Controles2016
             decimal Xmin; decimal Xmax;
             if (dFecha.Min() == dFecha.Max()) { Xmin = dFecha.Min() * 0.95m; Xmax = dFecha.Min() * 1.05m; }
             else { Xmin = dFecha.Min(); Xmax = dFecha.Max(); }
-            decimal Ymin = Math.Min(Variable.Min(), LBValor-Tol); decimal Ymax = Math.Max(Variable.Max(), LBValor+Tol);
+            decimal Ymin = Math.Min(Variable.Min(), LBValor - Tol); decimal Ymax = Math.Max(Variable.Max(), LBValor + Tol);
             double tick = Convert.ToDouble((Xmax - Xmin) / 4);
 
             Area.AxisX.Minimum = (double)(Xmin - (Xmax - Xmin) / 100);
@@ -113,7 +115,7 @@ namespace Controles2016
             SerieLB.IsVisibleInLegend = true;
 
             Series SerieMTol = new Series(); Grafico.Series.Add(SerieMTol);
-            decimal[] MTolarray = Enumerable.Repeat(LBValor+Tol, Variable.Count()).ToArray();
+            decimal[] MTolarray = Enumerable.Repeat(LBValor + Tol, Variable.Count()).ToArray();
             SerieMTol.Points.DataBindXY(DTFecha, MTolarray);
             SerieMTol.ChartType = SeriesChartType.Line;
             //SerieMTol.Color = Color.Gray;
@@ -122,7 +124,7 @@ namespace Controles2016
             SerieMTol.IsVisibleInLegend = true;
 
             Series SeriemTol = new Series(); Grafico.Series.Add(SeriemTol);
-            decimal[] mTolarray = Enumerable.Repeat(LBValor-Tol, Variable.Count()).ToArray();
+            decimal[] mTolarray = Enumerable.Repeat(LBValor - Tol, Variable.Count()).ToArray();
             SeriemTol.Points.DataBindXY(DTFecha, mTolarray);
             SeriemTol.ChartType = SeriesChartType.Line;
             //SeriemTol.Color = Color.Gray;
@@ -142,14 +144,14 @@ namespace Controles2016
         }
         public static void animareje(Axis eje, decimal valorMinInicial, decimal valorMinFinal, decimal valorMaxInicial, decimal valorMaxFinal, int paso, Chart grafico)
         {
-            for (int i=0;i<paso;i++)
+            for (int i = 0; i < paso; i++)
             {
                 eje.Minimum += (double)((valorMinFinal - valorMinInicial) / (paso - 1));
                 eje.Maximum += (double)((valorMaxFinal - valorMaxInicial) / (paso - 1));
                 grafico.Update();
                 System.Threading.Thread.Sleep(20);
             }
-                
+
         }
     }
 }

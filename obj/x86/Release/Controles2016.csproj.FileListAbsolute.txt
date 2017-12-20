@@ -32,19 +32,6 @@ C:\Users\Ale\Documents\Visual Studio 2015\Projects\Controles2016\bin\Release\Clo
 C:\Users\Ale\Documents\Visual Studio 2015\Projects\Controles2016\bin\Release\DocumentFormat.OpenXml.dll
 C:\Users\Ale\Documents\Visual Studio 2015\Projects\Controles2016\bin\Release\ClosedXML.pdb
 C:\Users\Ale\Documents\Visual Studio 2015\Projects\Controles2016\bin\Release\ClosedXML.xml
-C:\Users\Pablo\Source\Repos\ControlesDiarios\bin\Release\Controles 2016 pre release.exe.config
-C:\Users\Pablo\Source\Repos\ControlesDiarios\bin\Release\Controles 2016 pre release.exe
-C:\Users\Pablo\Source\Repos\ControlesDiarios\bin\Release\Controles 2016 pre release.pdb
-C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.About.resources
-C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.Form1.resources
-C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.LineaBaseEdit.resources
-C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.PasswordForm.resources
-C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.Properties.Resources.resources
-C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.ReportView.resources
-C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.csproj.GenerateResource.Cache
-C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles 2016 pre release.exe
-C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles 2016 pre release.pdb
-C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.csprojResolveAssemblyReference.cache
 C:\Users\alete\Source\Repos\ControlesDiarios\bin\Release\Controles 2016 pre release.exe.config
 C:\Users\alete\Source\Repos\ControlesDiarios\bin\Release\Controles 2016 pre release.exe
 C:\Users\alete\Source\Repos\ControlesDiarios\bin\Release\Controles 2016 pre release.pdb
@@ -58,4 +45,16 @@ C:\Users\alete\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.Repor
 C:\Users\alete\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.csproj.GenerateResource.Cache
 C:\Users\alete\Source\Repos\ControlesDiarios\obj\x86\Release\Controles 2016 pre release.exe
 C:\Users\alete\Source\Repos\ControlesDiarios\obj\x86\Release\Controles 2016 pre release.pdb
+C:\Users\Pablo\Source\Repos\ControlesDiarios\bin\Release\Controles 2016 pre release.exe.config
+C:\Users\Pablo\Source\Repos\ControlesDiarios\bin\Release\Controles 2016 pre release.exe
+C:\Users\Pablo\Source\Repos\ControlesDiarios\bin\Release\Controles 2016 pre release.pdb
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.About.resources
 C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.FORMS.CustomMessageBox.resources
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.Form1.resources
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.LineaBaseEdit.resources
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.PasswordForm.resources
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.Properties.Resources.resources
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.ReportView.resources
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles2016.csproj.GenerateResource.Cache
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles 2016 pre release.exe
+C:\Users\Pablo\Source\Repos\ControlesDiarios\obj\x86\Release\Controles 2016 pre release.pdb
